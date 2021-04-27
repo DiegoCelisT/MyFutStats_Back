@@ -12,10 +12,14 @@ const sequelize = new Sequelize ({
     storage:'./futebol.db'
 });
 
-const app = express ()
-
 //Aplicando o modulo de CORS:
 app.use(cors())
+
+
+//Chamando o modelo e fazendo a conexão com a BD:
+const Clube = require ('./models/clubes')
+const clubes = Clube ( sequelize, DataTypes)
+
 
 app.get ('', (req, res) =>{
     res.send ('Server funcionando :P')
