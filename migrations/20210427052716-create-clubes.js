@@ -30,10 +30,10 @@ module.exports = {
         type: Sequelize.NUMBER
       },
       E: {
-        type: Sequelize.STRING
+        type: Sequelize.NUMBER
       },
       D: {
-        type: Sequelize.STRING
+        type: Sequelize.NUMBER
       },
       GP: {
         type: Sequelize.NUMBER

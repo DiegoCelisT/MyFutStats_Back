@@ -1,5 +1,4 @@
 //Módulos:
-const HTTP = require ('http')
 const colors = require ('colors')
 const express = require ('express')
 const cors = require ('cors') //Para aquele problema de permisão de cors
@@ -16,14 +15,92 @@ const sequelize = new Sequelize ({
 app.use(cors())
 
 
-//Chamando o modelo e fazendo a conexão com a BD:
-const Clube = require ('./models/clubes')
-const clubes = Clube ( sequelize, DataTypes)
+//Chamando o modelo e fazendo a conexão com a BD (O nome da primeira constante deve ser o valor retornado no modelo de clubes.js):
+const Clubes = require ('./models/clubes')
+const clubesAll = Clubes ( sequelize, DataTypes)
 
+// Para analisar os JSON provenientes das requisições (Sem isso não tem como interpretar o que chega)
+app.use(express.json())
 
 app.get ('', (req, res) =>{
-    res.send ('Server funcionando :P')
+    res.send ('Página principal :P')
 })
+
+//GET Mostrar todas as tarefas
+app.get('/clubes', async (req, res) =>{    
+    const clubes = await clubesAll.findAll()
+    res.json ({ clubes })
+})
+
+//GET Mostrar UM clube só (por ID):
+app.get('/clubes/:id', async (req, res) =>{
+    const clube_ID = req.params.id //Aqui tô pegando o parametro id da requisição app.get('/clubes/:id'... [os dois pontos chutam esse parametro para o "params"]
+    const clube = await clubesAll.findByPk(clube_ID)
+    res.json({ clube })
+})
+
+//POST Criar tarefas:
+app.post('/clubes', async (req, res) =>{
+    const body = req.body
+    const novo_clube = await clubesAll.create({
+        nome: body.nome,
+        urlEscudo: body.urlEscudo,
+        país: body.país,
+        posição: body.posição,
+        pts: body.pts,
+        J: body.J,
+        V: body.V,
+        E: body.E,
+        D: body.D,
+        GP: body.GP,
+        GC: body.GC,
+        SG: body.SG,
+        amarelos: body.amarelos,
+        vermelhos: body.vermelhos
+    })
+    res.json({ novo_clube })
+})
+
+//PUT Atualizar um clube (uso de try catch para pegar os erros e que não fique carregando):
+app.put('/clubes/:id', async (req, res) =>{
+    try{
+        const clube_ID = req.params.id
+        const body = req.body
+        const clube = await clubesAll.findByPk(clube_ID)
+        clube.update({
+            nome: body.nome,
+            urlEscudo: body.urlEscudo,
+            país: body.país,
+            posição: body.posição,
+            pts: body.pts,
+            J: body.J,
+            V: body.V,
+            E: body.E,
+            D: body.D,
+            GP: body.GP,
+            GC: body.GC,
+            SG: body.SG,
+            amarelos: body.amarelos,
+            vermelhos: body.vermelhos
+        });        
+        res.send({ action: 'Atualizando clube', clube: clube })
+    } catch (error) {
+        return res.send( `<h1>Esta é uma mensagem amigável de erro :P</h1><br><h2>O que aconteceu foi o seguinte:</h2><br><h2>${error}</h2>`)
+    }
+})
+
+//DELETE Apagar um clube
+app.delete('/clubes/:id', async (req, res) => {
+    try{
+        const clube_ID = req.params.id
+        const apagando_clube = await clubesAll.destroy({ where: { ID: clube_ID } })
+        res.send({ action: 'Apagando Clube', apagando_clube: apagando_clube })
+    } catch (error) {
+        return res.send( `<h1>Esta é uma mensagem amigável de erro :P</h1><br><h2>O que aconteceu foi o seguinte:</h2><br><h2>${error}</h2>`)
+    }
+})
+
+
 
 app.listen (3000, () => {
     console.log (' Server funcionando no porto 3000 '.red.bgWhite.italic.bold)
