@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= club.nome %></title>
+</head>
+<body>
+    <h1>Novo club</h1>
+    <ul>
+        <li>
+            <strong><%= club.nome %></strong><br>
+            <img src="<%= club.urlEscudo %>" width="100" alt="Escudo do <%= club.nome %>"><br>
+            País: <%= club.país %><br>
+            
+
+        </li>
+    </ul>
+    <a href="http://localhost:<%= port %>/clubes">Voltar</a>
+</body>
+</html>

@@ -51,28 +51,28 @@ app.get('/clubes/:id', async (req, res) =>{
     res.render('club', { clubes: clube, port: port })
 })
 
-//POST Criar tarefas:
-app.post('/clubes', (req, res) => {
-    // const body = req.body
-    // const novo_clube = await clubesAll.create({
-    //     nome: body.nome,
-    //     urlEscudo: body.urlEscudo,
-    //     país: body.país,
-    //     posição: body.posição,
-    //     pts: body.pts,
-    //     J: body.J,
-    //     V: body.V,
-    //     E: body.E,
-    //     D: body.D,
-    //     GP: body.GP,
-    //     GC: body.GC,
-    //     SG: body.SG,
-    //     amarelos: body.amarelos,
-    //     vermelhos: body.vermelhos
-    // })
-    console.log(req.body);
+//POST Criar clubes:
+app.post('/novoclub', async (req, res) => {
+    const body = req.body
+    const novo_clube = await clubesAll.create({
+        nome: body.nome,
+        urlEscudo: body.urlEscudo,
+        país: body.país,
+        posição: body.posição,
+        pts: body.pts,
+        J: body.J,
+        V: body.V,
+        E: body.E,
+        D: body.D,
+        GP: body.GP,
+        GC: body.GC,
+        SG: body.SG,
+        amarelos: body.amarelos,
+        vermelhos: body.vermelhos
+    })
     // res.json({ novo_clube })
-    res.send('ok')
+    // res.send('ok')
+    res.render('novoclub', { club: novo_clube, port: port })
 })
 
 //PUT Atualizar um clube (uso de try catch para pegar os erros e que não fique carregando):
