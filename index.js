@@ -28,6 +28,9 @@ const port = 3030
 // Para analisar os JSON provenientes das requisições (Sem isso não tem como interpretar o que chega)
 app.use(express.json())
 
+// Para leer los datos del formulario
+app.use(express.urlencoded({ extended: true }));
+
 app.get ('', (req, res) =>{
     res.send ('Página principal :P')
 })
@@ -49,25 +52,27 @@ app.get('/clubes/:id', async (req, res) =>{
 })
 
 //POST Criar tarefas:
-app.post('/clubes', async (req, res) =>{
-    const body = req.body
-    const novo_clube = await clubesAll.create({
-        nome: body.nome,
-        urlEscudo: body.urlEscudo,
-        país: body.país,
-        posição: body.posição,
-        pts: body.pts,
-        J: body.J,
-        V: body.V,
-        E: body.E,
-        D: body.D,
-        GP: body.GP,
-        GC: body.GC,
-        SG: body.SG,
-        amarelos: body.amarelos,
-        vermelhos: body.vermelhos
-    })
-    res.json({ novo_clube })
+app.post('/clubes', (req, res) => {
+    // const body = req.body
+    // const novo_clube = await clubesAll.create({
+    //     nome: body.nome,
+    //     urlEscudo: body.urlEscudo,
+    //     país: body.país,
+    //     posição: body.posição,
+    //     pts: body.pts,
+    //     J: body.J,
+    //     V: body.V,
+    //     E: body.E,
+    //     D: body.D,
+    //     GP: body.GP,
+    //     GC: body.GC,
+    //     SG: body.SG,
+    //     amarelos: body.amarelos,
+    //     vermelhos: body.vermelhos
+    // })
+    console.log(req.body);
+    // res.json({ novo_clube })
+    res.send('ok')
 })
 
 //PUT Atualizar um clube (uso de try catch para pegar os erros e que não fique carregando):
