@@ -26,13 +26,21 @@
             <th>Equipe</th>
             <th>Po</th>
             <th>Jogos</th>
+            <th>Pts</th>
         </thead>
         <tbody>
-            <tr>
-                <td>e</td>
-                <td>r</td>
-                <td>y</td>
-            </tr>
+            <% clubes.forEach(function(club) { %>
+                <tr>
+                    <td><a href="http://localhost:<%= port %>/clubes/<%= club.id %>" ><%= club.nome %></a></td>
+                    <td><%= club.posição %> </td>
+                    <td><%= club.pts %></td>
+                    
+                    
+                     
+        
+                    
+                </tr>
+            <% }); %> 
         </tbody>
     </table>
     </ul>
