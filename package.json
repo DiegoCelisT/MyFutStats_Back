@@ -1,0 +1,33 @@
+{
+  "name": "futebol",
+  "version": "1.0.0",
+  "description": "app tela crud para torneios de futebol",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiegoCelisT/futebol-test"
+  },
+  "keywords": [
+    "futebol",
+    "back-end",
+    "nodejs"
+  ],
+  "author": "Diego e Julián",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiegoCelisT/futebol-test/issues"
+  },
+  "homepage": "https://github.com/DiegoCelisT/futebol-test#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
