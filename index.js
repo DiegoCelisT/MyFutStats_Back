@@ -14,10 +14,16 @@ const sequelize = new Sequelize ({
 //Aplicando o modulo de CORS:
 app.use(cors())
 
+//Aplicando o modulo de EJS:
+app.set('view engine', 'ejs')
+
 
 //Chamando o modelo e fazendo a conexão com a BD (O nome da primeira constante deve ser o valor retornado no modelo de clubes.js):
 const Clubes = require ('./models/clubes')
 const clubesAll = Clubes ( sequelize, DataTypes)
+
+// Constante para utilizar o porto
+const port = 3030
 
 // Para analisar os JSON provenientes das requisições (Sem isso não tem como interpretar o que chega)
 app.use(express.json())
@@ -29,14 +35,17 @@ app.get ('', (req, res) =>{
 //GET Mostrar todas as tarefas
 app.get('/clubes', async (req, res) =>{    
     const clubes = await clubesAll.findAll()
-    res.json ({ clubes })
+    
+    res.render('clubes', { clubes: clubes, port: port })
+    // res.json ({ clubes })
 })
 
 //GET Mostrar UM clube só (por ID):
 app.get('/clubes/:id', async (req, res) =>{
     const clube_ID = req.params.id //Aqui tô pegando o parametro id da requisição app.get('/clubes/:id'... [os dois pontos chutam esse parametro para o "params"]
     const clube = await clubesAll.findByPk(clube_ID)
-    res.json({ clube })
+    // res.json({ clube })
+    res.render('club', { clubes: clube, port: port })
 })
 
 //POST Criar tarefas:
@@ -102,6 +111,6 @@ app.delete('/clubes/:id', async (req, res) => {
 
 
 
-app.listen (3000, () => {
-    console.log (' Server funcionando no porto 3000 '.red.bgWhite.italic.bold)
+app.listen (port, () => {
+    console.log (` Server funcionando no porto ${ port } `.red.bgWhite.italic.bold)
 })

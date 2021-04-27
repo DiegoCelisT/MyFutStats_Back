@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clubes de futebol</title>
+</head>
+<body>
+    <h1>CLUBES</h1>
+    <ul><% clubes.forEach(function(club) { %>
+        <li>
+            <a href="http://localhost:<%= port %>/clubes/<%= club.id %>" ><strong><%= club.nome %></strong></a><br>
+            <img src="<%= club.urlEscudo %>" width="100" alt="Escudo do <%= club.nome %>"><br>
+            Pais: <%= club.país %><br>
+            posição: <%= club.posição %> <br>
+            Puntos: <%= club.pts %> <br>
+
+            
+        </li><br>
+    <% }); %>   
+    
+    <table>
+        <thead>
+            <th>Equipe</th>
+            <th>Po</th>
+            <th>Jogos</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>e</td>
+                <td>r</td>
+                <td>y</td>
+            </tr>
+        </tbody>
+    </table>
+    </ul>
+    
+
+
+    
+</body>
+</html>

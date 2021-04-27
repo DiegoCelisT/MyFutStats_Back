@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= clubes.nome %></title>
+</head>
+<body>
+    <h1>Club</h1>
+    <ul>
+        <li>
+            <strong><%= clubes.nome %></strong><br>
+            <img src="<%= clubes.urlEscudo %>" width="100" alt="Escudo do <%= clubes.nome %>"><br>
+            País: <%= clubes.país %><br>
+            Puntos: <%= clubes.pts %><br>
+            Jogos: <%= clubes.J %><br>
+            Vitórias: <%= clubes.V %><br>
+            Empates: <%= clubes.E %><br>
+            Derrotas: <%= clubes.D %><br>
+            Golos a favor: <%= clubes.GP %><br>
+            Golos contra: <%= clubes.GC %><br>
+            Amarelos: <%= clubes.amarelos %><br>
+            Vermelhos: <%= clubes.vermelhos %>
+
+        </li>
+    </ul>
+    <a href="http://localhost:<%= port %>/tasks">Voltar</a>
+</body>
+</html>
