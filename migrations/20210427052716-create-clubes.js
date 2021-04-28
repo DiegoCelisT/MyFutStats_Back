@@ -8,16 +8,16 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nome: {
+      name: {
         type: Sequelize.STRING
       },
-      urlEscudo: {
+      urlShield: {
         type: Sequelize.STRING
       },
-      país: {
+      country: {
         type: Sequelize.STRING
       },
-      posição: {
+      position: {
         type: Sequelize.NUMBER
       },
       pts: {
@@ -44,10 +44,10 @@ module.exports = {
       SG: {
         type: Sequelize.NUMBER
       },
-      amarelos: {
+      YC: {
         type: Sequelize.NUMBER
       },
-      vermelhos: {
+      RC: {
         type: Sequelize.NUMBER
       },
       createdAt: {

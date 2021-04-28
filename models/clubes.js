@@ -14,10 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Clubes.init({
-    nome: DataTypes.STRING,
-    urlEscudo: DataTypes.STRING,
-    país: DataTypes.STRING,
-    posição: DataTypes.NUMBER,
+    name: DataTypes.STRING,
+    urlShield: DataTypes.STRING,
+    country: DataTypes.STRING,
+    position: DataTypes.NUMBER,
     pts: DataTypes.NUMBER,
     J: DataTypes.NUMBER,
     V: DataTypes.NUMBER,
@@ -26,8 +26,8 @@ module.exports = (sequelize, DataTypes) => {
     GP: DataTypes.NUMBER,
     GC: DataTypes.NUMBER,
     SG: DataTypes.NUMBER,
-    amarelos: DataTypes.NUMBER,
-    vermelhos: DataTypes.NUMBER
+    YC: DataTypes.NUMBER,
+    RC: DataTypes.NUMBER
   }, {
     sequelize,
     modelName: 'Clubes',

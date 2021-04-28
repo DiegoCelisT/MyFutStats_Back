@@ -3,7 +3,7 @@ const colors = require ('colors')
 const express = require ('express')
 const cors = require ('cors') //Para aquele problema de permisão de cors
 const { Sequelize, DataTypes } = require ('sequelize')
-const path = require('path');
+// const path = require('path');
 
 
 //Especificação da BD:
@@ -14,15 +14,15 @@ const sequelize = new Sequelize ({
 });
 
 //Para poder comunicarse desde EJS con nuestra base de datos
-const sqlite3 = require('sqlite3').verbose();
-const db_nome = path.join(__dirname, 'futebol.db'); //Define un nombre y la ubicacion de la DB
-const db = new sqlite3.Database('futebol.db');
+// const sqlite3 = require('sqlite3').verbose();
+// const db_nome = path.join(__dirname, 'futebol.db'); //Define un nombre y la ubicacion de la DB
+// const db = new sqlite3.Database('futebol.db');
 
 //Aplicando o modulo de CORS:
 app.use(cors())
 
 //Aplicando o modulo de EJS:
-app.set('view engine', 'ejs')
+// app.set('view engine', 'ejs')
 
 
 //Chamando o modelo e fazendo a conexão com a BD (O nome da primeira constante deve ser o valor retornado no modelo de clubes.js):
@@ -46,16 +46,16 @@ app.get ('', (req, res) =>{
 app.get('/clubes', async (req, res) =>{    
     const clubes = await clubesAll.findAll()
     
-    res.render('clubes', { clubes: clubes, port: port })
-    // res.json ({ clubes })
+    // res.render('clubes', { clubes: clubes, port: port })
+    res.json ({ clubes })
 })
 
 //GET Mostrar UM clube só (por ID):
 app.get('/clubes/:id', async (req, res) =>{
     const clube_ID = req.params.id //Aqui tô pegando o parametro id da requisição app.get('/clubes/:id'... [os dois pontos chutam esse parametro para o "params"]
     const clube = await clubesAll.findByPk(clube_ID)
-    // res.json({ clube })
-    res.render('club', { clubes: clube, port: port })
+    res.json({ clube })
+    // res.render('club', { clubes: clube, port: port })
 })
 
 //POST Criar clubes:
@@ -77,9 +77,9 @@ app.post('/novoclub', async (req, res) => {
         amarelos: body.amarelos,
         vermelhos: body.vermelhos
     })
-    // res.json({ novo_clube })
+    res.json({ novo_clube })
     // res.send('ok')
-    res.render('novoclub', { club: novo_clube, port: port })
+    // res.render('novoclub', { club: novo_clube, port: port })
 })
 
 //PUT Atualizar um clube (uso de try catch para pegar os erros e que não fique carregando):
