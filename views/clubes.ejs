@@ -35,7 +35,7 @@
     <ul>
         <% clubes.forEach(function(club) { %>
             <li>
-                <a href="http://localhost:<%= port %>/clubes/<%= club.id %>" ><strong><%= club.nome %></strong></a><br>
+                <a href="http://localhost:<%= port %>/clube/<%= club.id %>" ><strong><%= club.nome %></strong></a><br>
                 <img src="<%= club.urlEscudo %>" width="100" alt="Escudo do <%= club.nome %>"><br>
                 Pais: <%= club.país %><br>
                 posição: <%= club.posição %> <br>
@@ -63,7 +63,7 @@
         <tbody>
             <% clubes.forEach(function(club) { %>
                 <tr>
-                    <td><a href="http://localhost:<%= port %>/clubes/<%= club.id %>" ><%= club.nome %></a></td>
+                    <td><a href="http://localhost:<%= port %>/clube/<%= club.id %>" ><%= club.nome %></a></td>
                     <td><%= club.posição %> </td>
                     <td><%= club.J %></td>
                     <td><%= club.V %></td>
