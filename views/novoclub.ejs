@@ -13,10 +13,15 @@
             <strong><%= club.nome %></strong><br>
             <img src="<%= club.urlEscudo %>" width="100" alt="Escudo do <%= club.nome %>"><br>
             País: <%= club.país %><br>
-            
-
         </li>
     </ul>
+
+    <!-- Aqui va ir la opcion de cargar más datos del equipo, modificar los cargados o eliminar el equipo (un formulario y 3 botones), y tambien, que esta misma opcion esté en el template de
+    club.ejs, donde uno busca al club -->
+
+    <a href="/clubes/<%= club.id %>">Editar</a>
+    
+    
     <a href="http://localhost:<%= port %>/clubes">Voltar</a>
 </body>
 </html>

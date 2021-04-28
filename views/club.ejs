@@ -25,6 +25,19 @@
 
         </li>
     </ul>
-    <a href="http://localhost:<%= port %>/clubes">Voltar</a>
+    <form action="" method="post">
+        <a href=""></a>
+    </form>
+    
+    <form action="/clubclear/<%= clubes.id %>" method="post">
+        <input type="submit" value="Eliminar" onclick="return confirm('Você tem certeza de que quere eliminar esse clube?')">
+    </form>
+    <br>
+    <p>AQUI IRIA UN BOTON PARA EDITAR LA INFORMACION O CARGAR NUEVA, AL APRETAR, SE ABRE UN NUEVO COMPONENTE CON UNA TABLA QUE TIENE CARGADOS LOS DATOS PREVIOS Y LOS ESPACIOS EN BLANCO.</p>
+    <p>DEBAJO PODEMOS COLOCAR EL BOTON PARA RELLENAR EL FORMULARIO DE MANERA RANDOM</p>
+     <br><hr>
+    <footer>
+        <a href="http://localhost:<%= port %>/clubes">Voltar</a>
+    </footer>
 </body>
 </html>

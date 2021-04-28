@@ -3,6 +3,8 @@ const colors = require ('colors')
 const express = require ('express')
 const cors = require ('cors') //Para aquele problema de permisão de cors
 const { Sequelize, DataTypes } = require ('sequelize')
+const path = require('path');
+
 
 //Especificação da BD:
 const app = express ();
@@ -10,6 +12,11 @@ const sequelize = new Sequelize ({
     dialect: 'sqlite',
     storage:'./futebol.db'
 });
+
+//Para poder comunicarse desde EJS con nuestra base de datos
+const sqlite3 = require('sqlite3').verbose();
+const db_nome = path.join(__dirname, 'futebol.db'); //Define un nombre y la ubicacion de la DB
+const db = new sqlite3.Database('futebol.db');
 
 //Aplicando o modulo de CORS:
 app.use(cors())
@@ -22,7 +29,7 @@ app.set('view engine', 'ejs')
 const Clubes = require ('./models/clubes')
 const clubesAll = Clubes ( sequelize, DataTypes)
 
-// Constante para utilizar o porto
+// Constante para utilizar o porto desde os templates
 const port = 3030
 
 // Para analisar os JSON provenientes das requisições (Sem isso não tem como interpretar o que chega)
@@ -35,7 +42,7 @@ app.get ('', (req, res) =>{
     res.send ('Página principal :P')
 })
 
-//GET Mostrar todas as tarefas
+//GET Mostrar todos os clubes
 app.get('/clubes', async (req, res) =>{    
     const clubes = await clubesAll.findAll()
     
@@ -103,17 +110,30 @@ app.put('/clubes/:id', async (req, res) =>{
     }
 })
 
-//DELETE Apagar um clube
+// DELETE Apagar um clube
 app.delete('/clubes/:id', async (req, res) => {
     try{
         const clube_ID = req.params.id
         const apagando_clube = await clubesAll.destroy({ where: { ID: clube_ID } })
-        res.send({ action: 'Apagando Clube', apagando_clube: apagando_clube })
+        res.send({ action: 'Apagando Clube', apagando_clube: clube_ID })
+        
+        
     } catch (error) {
         return res.send( `<h1>Esta é uma mensagem amigável de erro :P</h1><br><h2>O que aconteceu foi o seguinte:</h2><br><h2>${error}</h2>`)
     }
 })
 
+// DELETE um clube desde EJS
+app.post('/clubclear/:id', async (req, res) => {
+    const id = req.params.id;
+    const sql = 'DELETE FROM clubes WHERE id = ?';
+    const clube = await clubesAll.findByPk(id)
+    db.run(sql,id,(err, rows) => {
+        
+        res.render('clubclear', { clube: clube, port: port })
+    })
+      
+})
 
 
 app.listen (port, () => {
