@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clube eliminado</title>
+</head>
+<body>
+    <h1>Club <%= clubes.nome %></h1>
+    <ul>
+        <li>
+            <strong><%= clubes.nome %></strong><br>
+            <img src="<%= clubes.urlEscudo %>" width="100" alt="Escudo do <%= clubes.nome %>"><br>
+            País: <%= clubes.país %><br>
+            
+
+        </li>
+    </ul>
+    <h2>Editar club <%= clubes.nome %></h2>
+    <form action="/clubatualizado/<%= clubes.id %>" method="POST">
+        <p>Nome do clube:</p>
+        <input type="text" value="<%= clubes.nome %>" name="nome">
+        <p>País de origem:</p>
+        <input type="text" value="<%= clubes.país %>" name="país">
+        <p>Puntos</p>
+        <input type="text" value="<%= clubes.pts %>" name="pts">
+        <p>Jogos</p>
+        <input type="text" value="<%= clubes.J %>" name="J">
+        <p>Vitórias:</p>
+        <input type="text" value="<%= clubes.V %>" name="V">
+        <p>Empates:</p>
+        <input type="text" value="<%= clubes.E %>" name="E">
+        <p>Derrotas:</p>
+        <input type="text" value="<%= clubes.D %>" name="D">
+        <p>Golos a favor:</p>
+        <input type="text" value="<%= clubes.GP %>" name="GP">  
+        <p>Golos contra:</p>      
+        <input type="text" value="<%= clubes.GC %>" name="GC">  
+        <p>Amarelos:</p>
+        <input type="text" value="<%= clubes.amarelos %>" name="amarelos">  
+        <p>Vermelhos:</p>
+        <input type="text" value="<%= clubes.vermelhos %>" name="vermelhos"> <br>
+            
+        <input type="submit" value="Atualizar">
+    </form>
+
+
+
+    <br>
+    <footer>
+        <a href="http://localhost:<%= port %>/clubes">Voltar</a>
+    </footer>
+</body>
+</html>

@@ -36,7 +36,7 @@ const port = 3030
 app.use(express.json())
 
 // Para leer los datos del formulario
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));    
 
 app.get ('', (req, res) =>{
     res.send ('Página principal :P')
@@ -51,21 +51,25 @@ app.get('/clubes', async (req, res) =>{
 })
 
 //GET Mostrar UM clube só (por ID):
-app.get('/clubes/:id', async (req, res) =>{
+app.get('/clube/:id', async (req, res) =>{
     const clube_ID = req.params.id //Aqui tô pegando o parametro id da requisição app.get('/clubes/:id'... [os dois pontos chutam esse parametro para o "params"]
     const clube = await clubesAll.findByPk(clube_ID)
     res.json({ clube })
-    // res.render('club', { clubes: clube, port: port })
+
+    // res.render('clube', { clubes: clube, port: port })
+
 })
+
+
 
 //POST Criar clubes:
 app.post('/novoclub', async (req, res) => {
     const body = req.body
     const novo_clube = await clubesAll.create({
-        nome: body.nome,
-        urlEscudo: body.urlEscudo,
-        país: body.país,
-        posição: body.posição,
+        name: body.name,
+        urlShield: body.urlShield,
+        country: body.country,
+        position: body.position,
         pts: body.pts,
         J: body.J,
         V: body.V,
@@ -74,8 +78,8 @@ app.post('/novoclub', async (req, res) => {
         GP: body.GP,
         GC: body.GC,
         SG: body.SG,
-        amarelos: body.amarelos,
-        vermelhos: body.vermelhos
+        YC: body.YC,
+        RC: body.RC
     })
     res.json({ novo_clube })
     // res.send('ok')
@@ -83,16 +87,16 @@ app.post('/novoclub', async (req, res) => {
 })
 
 //PUT Atualizar um clube (uso de try catch para pegar os erros e que não fique carregando):
-app.put('/clubes/:id', async (req, res) =>{
+app.put('/clube/:id', async (req, res) =>{
     try{
         const clube_ID = req.params.id
         const body = req.body
         const clube = await clubesAll.findByPk(clube_ID)
         clube.update({
-            nome: body.nome,
-            urlEscudo: body.urlEscudo,
-            país: body.país,
-            posição: body.posição,
+            name: body.name,
+            urlShield: body.urlShield,
+            country: body.country,
+            position: body.position,
             pts: body.pts,
             J: body.J,
             V: body.V,
@@ -101,8 +105,8 @@ app.put('/clubes/:id', async (req, res) =>{
             GP: body.GP,
             GC: body.GC,
             SG: body.SG,
-            amarelos: body.amarelos,
-            vermelhos: body.vermelhos
+            YC: body.YC,
+            RC: body.RC
         });        
         res.send({ action: 'Atualizando clube', clube: clube })
     } catch (error) {
@@ -124,16 +128,60 @@ app.delete('/clubes/:id', async (req, res) => {
 })
 
 // DELETE um clube desde EJS
-app.post('/clubclear/:id', async (req, res) => {
-    const id = req.params.id;
-    const sql = 'DELETE FROM clubes WHERE id = ?';
-    const clube = await clubesAll.findByPk(id)
-    db.run(sql,id,(err, rows) => {
+// app.post('/clubclear/:id', async (req, res) => {
+//     const id = req.params.id;
+//     const sql = 'DELETE FROM clubes WHERE id = ?';
+//     const clube = await clubesAll.findByPk(id)
+//     db.run(sql,id,(err, rows) => {
         
-        res.render('clubclear', { clube: clube, port: port })
-    })
-      
-})
+//         res.render('clubclear', { clube: clube, port: port })
+//     })
+// })
+
+//GET Mostrar UM clube para editar dados
+// app.get('/clubedit/:id', async (req, res) =>{
+//     const clube_ID = req.params.id
+//     const clube = await clubesAll.findByPk(clube_ID)
+   
+//     res.render('clubedit', { clubes: clube, port: port })
+// })
+
+// ATUALIZAR Dados do clube
+// app.post('/clubatualizado/:id', async (req, res) => {
+//     const id = req.params.id;
+//     const clube = await clubesAll.findByPk(id)
+//     const body = req.body
+//     clube.update({
+//         name: body.name,
+//         urlShield: body.urlShield,
+//         country: body.country,
+//         position: body.position,
+//         pts: body.pts,
+//         J: body.J,
+//         V: body.V,
+//         E: body.E,
+//         D: body.D,
+//         GP: body.GP,
+//         GC: body.GC,
+//         SG: body.SG,
+//         YC: body.YC,
+//         RC: body.RC
+//     });
+//         res.json({ novo_clube })
+//         // console.log(clube)
+//         // res.render('clubatualizado', { clube: clube, port: port, id: id })
+//     })
+// })
+
+
+//GET Mostrar UM clube atualizado
+// app.get('/clubatualizado/:id', async (req, res) =>{
+//     const clube_ID = req.params.id
+//     const clube = await clubesAll.findByPk(clube_ID)
+//     // res.json({ clube })
+//     res.render('clubatualizado', { clubes: clube, port: port })
+// })
+
 
 
 app.listen (port, () => {

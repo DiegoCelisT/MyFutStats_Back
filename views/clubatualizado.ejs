@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= clube.nome %></title>
+</head>
+<body>
+    <h1>Club <%= clube.nome %> atualizado</h1>
+    <ul>
+        <li>
+            <strong><%= clube.nome %></strong><br>
+            <img src="<%= clube.urlEscudo %>" width="100" alt="Escudo do <%= clube.nome %>"><br>
+            País: <%= clube.país %><br>
+            Puntos: <%= clube.pts %><br>
+            Jogos: <%= clube.J %><br>
+            Vitórias: <%= clube.V %><br>
+            Empates: <%= clube.E %><br>
+            Derrotas: <%= clube.D %><br>
+            Golos a favor: <%= clube.GP %><br>
+            Golos contra: <%= clube.GC %><br>
+            Amarelos: <%= clube.amarelos %><br>
+            Vermelhos: <%= clube.vermelhos %>
+
+        </li>
+    </ul>
+        
+
+    <a href="http://localhost:<%= port %>/clubedit/<%= clube.id %>"><input type="submit" value="Editar novamente"></a>    
+    
+     <br><hr>
+    <footer>
+        <a href="http://localhost:<%= port %>/clubes">Voltar</a>
+    </footer>
+</body>
+</html>
