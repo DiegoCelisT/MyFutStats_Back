@@ -55,7 +55,9 @@ app.get('/clube/:id', async (req, res) =>{
     const clube_ID = req.params.id //Aqui tô pegando o parametro id da requisição app.get('/clubes/:id'... [os dois pontos chutam esse parametro para o "params"]
     const clube = await clubesAll.findByPk(clube_ID)
     res.json({ clube })
+
     // res.render('clube', { clubes: clube, port: port })
+
 })
 
 
