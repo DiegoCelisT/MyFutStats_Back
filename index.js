@@ -28,6 +28,8 @@ app.use(cors())
 //Chamando o modelo e fazendo a conexão com a BD (O nome da primeira constante deve ser o valor retornado no modelo de clubes.js):
 const Clubes = require ('./models/clubes')
 const clubesAll = Clubes ( sequelize, DataTypes)
+const Liga = require ('./models/liga')
+const Ligas = Liga ( sequelize, DataTypes)
 
 // Constante para utilizar o porto desde os templates
 const port = 3030
@@ -59,8 +61,6 @@ app.get('/clube/:id', async (req, res) =>{
     // res.render('clube', { clubes: clube, port: port })
 
 })
-
-
 
 //POST Criar clubes:
 app.post('/novoclub', async (req, res) => {
@@ -126,6 +126,54 @@ app.delete('/clubes/:id', async (req, res) => {
         return res.send( `<h1>Esta é uma mensagem amigável de erro :P</h1><br><h2>O que aconteceu foi o seguinte:</h2><br><h2>${error}</h2>`)
     }
 })
+
+//VERBOS PARA A TABELA DE LIGAS
+
+app.get('/ligas', async (req, res) =>{    
+    const MyLeagues = await Ligas.findAll()
+    res.json ({ MyLeagues })
+})
+
+app.get('/liga/:id', async (req, res) =>{
+    const liga_ID = req.params.id
+    const Liga = await Ligas.findByPk(liga_ID)
+    res.json ({ Liga })
+})
+
+app.post('/novaLiga', async (req, res) => {
+    const body = req.body
+    const novaLiga = await Ligas.create({
+        name: body.name,
+        active: body.active
+    })
+    res.json({ novaLiga })
+})
+
+app.put('/liga/:id', async (req, res) =>{
+    try{
+        const liga_ID = req.params.id
+        const body = req.body
+        const liga = await Ligas.findByPk(liga_ID)
+        liga.update({
+            name: body.name,
+            active: body.active
+        });        
+        res.send({ action: 'Atualizando liga', liga: liga })
+    } catch (error) {
+        return res.send( `<h1>Esta é uma mensagem amigável de erro :P</h1><br><h2>O que aconteceu foi o seguinte:</h2><br><h2>${error}</h2>`)
+    }
+})
+
+app.delete('/ligas/:id', async (req, res) => {
+    try{
+        const liga_ID = req.params.id
+        const apagando_liga = await Ligas.destroy({ where: { ID: liga_ID } })
+        res.send({ action: 'Apagando Liga', apagando_liga: liga_ID })
+    } catch (error) {
+        return res.send( `<h1>Esta é uma mensagem amigável de erro :P</h1><br><h2>O que aconteceu foi o seguinte:</h2><br><h2>${error}</h2>`)
+    }
+})
+
 
 // DELETE um clube desde EJS
 // app.post('/clubclear/:id', async (req, res) => {
