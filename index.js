@@ -117,12 +117,12 @@ app.put('/clube/:id', async (req, res) =>{
 })
 
 // DELETE Apagar um clube
-app.delete('/clubes/:id', async (req, res) => {
+app.delete('/clube/:id', async (req, res) => {
     try{
         const clube_ID = req.params.id
         const apagando_clube = await clubesAll.destroy({ where: { ID: clube_ID } })
-        res.send({ action: 'Apagando Clube', apagando_clube: clube_ID })
-        
+        // res.send({ action: 'Apagando Clube', apagando_clube: clube_ID })
+        res.json({ clube })
         
     } catch (error) {
         return res.send( `<h1>Esta é uma mensagem amigável de erro :P</h1><br><h2>O que aconteceu foi o seguinte:</h2><br><h2>${error}</h2>`)
