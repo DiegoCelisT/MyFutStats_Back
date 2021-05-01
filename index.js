@@ -56,6 +56,7 @@ app.get('/clubes', async (req, res) =>{
 app.get('/clube/:id', async (req, res) =>{
     const clube_ID = req.params.id //Aqui tô pegando o parametro id da requisição app.get('/clubes/:id'... [os dois pontos chutam esse parametro para o "params"]
     const clube = await clubesAll.findByPk(clube_ID)
+    console.log(clube_ID);
     res.json({ clube })
 
     // res.render('clube', { clubes: clube, port: port })
@@ -108,7 +109,8 @@ app.put('/clube/:id', async (req, res) =>{
             YC: body.YC,
             RC: body.RC
         });        
-        res.send({ action: 'Atualizando clube', clube: clube })
+        //res.send({ action: 'Atualizando clube', clube: clube })
+        res.json({ clube })
     } catch (error) {
         return res.send( `<h1>Esta é uma mensagem amigável de erro :P</h1><br><h2>O que aconteceu foi o seguinte:</h2><br><h2>${error}</h2>`)
     }
