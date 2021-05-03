@@ -88,7 +88,7 @@ app.post('/novoclub', async (req, res) => {
 })
 
 //PUT Atualizar um clube (uso de try catch para pegar os erros e que não fique carregando):
-app.put('/clube/:id', async (req, res) =>{
+app.put('/editclube/:id', async (req, res) =>{
     try{
         const clube_ID = req.params.id
         const body = req.body
@@ -109,7 +109,7 @@ app.put('/clube/:id', async (req, res) =>{
             YC: body.YC,
             RC: body.RC
         });        
-        //res.send({ action: 'Atualizando clube', clube: clube })
+        // res.send({ action: 'Atualizando clube', clube: clube })
         res.json({ clube })
     } catch (error) {
         return res.send( `<h1>Esta é uma mensagem amigável de erro :P</h1><br><h2>O que aconteceu foi o seguinte:</h2><br><h2>${error}</h2>`)
