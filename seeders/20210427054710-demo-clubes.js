@@ -72,7 +72,60 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     
-  }]);
+  },{
+    name: 'Boca Juniors',
+    urlShield: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Boca_Juniors_logo18.svg/1200px-Boca_Juniors_logo18.svg.png',
+    country: 'Argentina',
+    position: 5,
+    pts: 9,
+    J: 4,
+    V: 2,
+    E: 1,
+    D: 3,
+    GP: 15,
+    GC: 16,
+    SG: -1,
+    YC: 2,
+    RC: 1,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  
+},
+{
+  name: 'América de Cali',
+  urlShield: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Escudo_de_Am%C3%A9rica_de_Cali.png',
+  country: 'Colômbia',
+  position: 6,
+  pts: 4,
+  J: 4,
+  V: 2,
+  E: 1,
+  D: 3,
+  GP: 15,
+  GC: 10,
+  SG: 5,
+  YC: 2,
+  RC: 1,
+  createdAt: new Date(),
+  updatedAt: new Date()
+},{
+  name: 'Chivas',
+  urlShield: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/Guadalajara_CD.svg/1200px-Guadalajara_CD.svg.png',
+  country: 'México',
+  position: 7,
+  pts: 1,
+  J: 4,
+  V: 0,
+  E: 1,
+  D: 0,
+  GP: 16,
+  GC: 14,
+  SG: 2,
+  YC: 2,
+  RC: 1,
+  createdAt: new Date(),
+  updatedAt: new Date()
+}]);
 
   },
 
