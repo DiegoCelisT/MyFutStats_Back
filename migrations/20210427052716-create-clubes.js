@@ -17,37 +17,28 @@ module.exports = {
       country: {
         type: Sequelize.STRING
       },
-      position: {
+      pontos: {
         type: Sequelize.NUMBER
       },
-      pts: {
+      jogados: {
         type: Sequelize.NUMBER
       },
-      J: {
+      vitorias: {
         type: Sequelize.NUMBER
       },
-      V: {
+      empates: {
         type: Sequelize.NUMBER
       },
-      E: {
+      derrotas: {
         type: Sequelize.NUMBER
       },
-      D: {
+      golsPro: {
         type: Sequelize.NUMBER
       },
-      GP: {
+      golsContra: {
         type: Sequelize.NUMBER
       },
-      GC: {
-        type: Sequelize.NUMBER
-      },
-      SG: {
-        type: Sequelize.NUMBER
-      },
-      YC: {
-        type: Sequelize.NUMBER
-      },
-      RC: {
+      saldoGols: {
         type: Sequelize.NUMBER
       },
       createdAt: {

@@ -4,7 +4,7 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     
     await queryInterface.bulkInsert('Ligas', [{
-      name: 'Gringos League',
+      name: 'Champions Toter',
       active: true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -14,7 +14,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
       },{
-      name: 'Champions Toter',
+      name: 'Gringos League',
       active: true,
       createdAt: new Date(),
       updatedAt: new Date()
