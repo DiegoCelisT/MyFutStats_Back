@@ -57,9 +57,7 @@ app.get('/clube/:id', async (req, res) =>{
     const clube = await clubesAll.findByPk(clube_ID)
     console.log(clube_ID);
     res.json({ clube })
-
     // res.render('clube', { clubes: clube, port: port })
-
 })
 
 //POST Criar clubes:
@@ -230,7 +228,6 @@ app.delete('/ligas/:id', async (req, res) => {
 //     // res.json({ clube })
 //     res.render('clubatualizado', { clubes: clube, port: port })
 // })
-
 
 
 app.listen (port, () => {
