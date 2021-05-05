@@ -47,7 +47,6 @@ app.get ('', (req, res) =>{
 //GET Mostrar todos os clubes
 app.get('/clubes', async (req, res) =>{    
     const clubes = await clubesAll.findAll()
-    
     // res.render('clubes', { clubes: clubes, port: port })
     res.json ({ clubes })
 })
@@ -66,21 +65,21 @@ app.get('/clube/:id', async (req, res) =>{
 //POST Criar clubes:
 app.post('/novoclub', async (req, res) => {
     const body = req.body
+    const jogadosEquation = body.vitorias+body.empates+body.derrotas
+    const pontosEquation = (3*body.vitorias)+body.empates
+    const saldoGolsEquation = body.golsPro-body.golsContra
     const novo_clube = await clubesAll.create({
         name: body.name,
         urlShield: body.urlShield,
         country: body.country,
-        position: body.position,
-        pts: body.pts,
-        J: body.J,
-        V: body.V,
-        E: body.E,
-        D: body.D,
-        GP: body.GP,
-        GC: body.GC,
-        SG: body.SG,
-        YC: body.YC,
-        RC: body.RC
+        pontos: pontosEquation,
+        jogados: jogadosEquation,
+        vitorias: body.vitorias,
+        empates: body.empates,
+        derrotas: body.derrotas,
+        golsPro: body.golsPro,
+        golsContra: body.golsContra,
+        saldoGols: saldoGolsEquation
     })
     res.json({ novo_clube })
     // res.send('ok')
@@ -92,22 +91,22 @@ app.put('/editclube/:id', async (req, res) =>{
     try{
         const clube_ID = req.params.id
         const body = req.body
+        const jogadosEquation = body.vitorias+body.empates+body.derrotas
+        const pontosEquation = (3*body.vitorias)+body.empates
+        const saldoGolsEquation = body.golsPro-body.golsContra
         const clube = await clubesAll.findByPk(clube_ID)
         clube.update({
             name: body.name,
             urlShield: body.urlShield,
             country: body.country,
-            position: body.position,
-            pts: body.pts,
-            J: body.J,
-            V: body.V,
-            E: body.E,
-            D: body.D,
-            GP: body.GP,
-            GC: body.GC,
-            SG: body.SG,
-            YC: body.YC,
-            RC: body.RC
+            pontos: pontosEquation,
+            jogados: jogadosEquation,
+            vitorias: body.vitorias,
+            empates: body.empates,
+            derrotas: body.derrotas,
+            golsPro: body.golsPro,
+            golsContra: body.golsContra,
+            saldoGols: saldoGolsEquation
         });        
         // res.send({ action: 'Atualizando clube', clube: clube })
         res.json({ clube })
