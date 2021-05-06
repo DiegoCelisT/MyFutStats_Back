@@ -69,9 +69,9 @@ module.exports = {
       vitorias: 2,
       empates: 3,
       derrotas: 0,
-      golsPro: 12,
-      golsContra: 17,
-      saldoGols: -5,
+      golsPro: 16,
+      golsContra: 6,
+      saldoGols: 10,
       createdAt: new Date(),
       updatedAt: new Date()
     },{
@@ -84,8 +84,8 @@ module.exports = {
       empates: 3,
       derrotas: 0,
       golsPro: 19,
-      golsContra: 14,
-      saldoGols: 5,
+      golsContra: 18,
+      saldoGols: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },{
@@ -102,8 +102,49 @@ module.exports = {
       saldoGols: -12,
       createdAt: new Date(),
       updatedAt: new Date()
-}]);
-
+    },{
+      name: 'Independiente Medellín',
+      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Escudo_del_Deportivo_Independiente_Medell%C3%ADn.png',
+      country: 'Colômbia',
+      pontos: 6,
+      jogados: 4,
+      vitorias: 2,
+      empates: 0,
+      derrotas: 2,
+      golsPro: 14,
+      golsContra: 17,
+      saldoGols: -3,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },{
+      name: 'Flamengo',
+      urlShield: 'https://escudo.biz/wp-content/uploads/2018/11/flamengo-escudo-4.png',
+      country: 'Brasil',
+      pontos: 6,
+      jogados: 4,
+      vitorias: 1,
+      empates: 3,
+      derrotas: 0,
+      golsPro: 15,
+      golsContra: 5,
+      saldoGols: 10,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },{
+      name: 'Santa Fé',
+      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png',
+      country: 'Colômbia',
+      pontos: 10,
+      jogados: 5,
+      vitorias: 3,
+      empates: 1,
+      derrotas: 1,
+      golsPro: 11,
+      golsContra: 8,
+      saldoGols: 3,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }]);
   },
 
   down: async (queryInterface, Sequelize) => {
