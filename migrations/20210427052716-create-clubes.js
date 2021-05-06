@@ -41,6 +41,9 @@ module.exports = {
       saldoGols: {
         type: Sequelize.NUMBER
       },
+      position: {
+        type: Sequelize.NUMBER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
