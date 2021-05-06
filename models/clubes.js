@@ -24,7 +24,8 @@ module.exports = (sequelize, DataTypes) => {
     derrotas: DataTypes.NUMBER,
     golsPro: DataTypes.NUMBER,
     golsContra: DataTypes.NUMBER,
-    saldoGols: DataTypes.NUMBER
+    saldoGols: DataTypes.NUMBER,
+    position: DataTypes.NUMBER
   }, {
     sequelize,
     modelName: 'Clubes',

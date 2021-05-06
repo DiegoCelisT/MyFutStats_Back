@@ -80,8 +80,6 @@ app.post('/novoclub', async (req, res) => {
         saldoGols: saldoGolsEquation
     })
     res.json({ novo_clube })
-    // res.send('ok')
-    // res.render('novoclub', { club: novo_clube, port: port })
 })
 
 //PUT Atualizar um clube (uso de try catch para pegar os erros e que não fique carregando):
@@ -89,9 +87,12 @@ app.put('/editclube/:id', async (req, res) =>{
     try{
         const clube_ID = req.params.id
         const body = req.body
+        
         const jogadosEquation = body.vitorias+body.empates+body.derrotas
         const pontosEquation = (3*body.vitorias)+body.empates
         const saldoGolsEquation = body.golsPro-body.golsContra
+        //Com essas equações se a requisição é feita parcialmente desde o back, então os valores não enviados vão chegar como nulls pois dependen do "body" da requisição, isso foi solucionado no front melhorando a lógica em que o formulário é enviado.
+        
         const clube = await clubesAll.findByPk(clube_ID)
         clube.update({
             name: body.name,
@@ -104,12 +105,12 @@ app.put('/editclube/:id', async (req, res) =>{
             derrotas: body.derrotas,
             golsPro: body.golsPro,
             golsContra: body.golsContra,
-            saldoGols: saldoGolsEquation
+            saldoGols: saldoGolsEquation,
+            position: body.position //Só no PUT porque na nossa lógica de negócio só se pode editar ela, não criar desde POST
         });        
-        // res.send({ action: 'Atualizando clube', clube: clube })
         res.json({ clube })
     } catch (error) {
-        return res.send( `<h1>Esta é uma mensagem amigável de erro :P</h1><br><h2>O que aconteceu foi o seguinte:</h2><br><h2>${error}</h2>`)
+        return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
     }
 })
 
@@ -117,12 +118,12 @@ app.put('/editclube/:id', async (req, res) =>{
 app.delete('/clube/:id', async (req, res) => {
     try{
         const clube_ID = req.params.id
-        const apagando_clube = await clubesAll.destroy({ where: { ID: clube_ID } })
+        const clube = await clubesAll.destroy({ where: { ID: clube_ID } })
         // res.send({ action: 'Apagando Clube', apagando_clube: clube_ID })
         res.json({ clube })
         
     } catch (error) {
-        return res.send( `<h1>Esta é uma mensagem amigável de erro :P</h1><br><h2>O que aconteceu foi o seguinte:</h2><br><h2>${error}</h2>`)
+        return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
     }
 })
 
@@ -159,7 +160,7 @@ app.put('/liga/:id', async (req, res) =>{
         });        
         res.send({ action: 'Atualizando liga', liga: liga })
     } catch (error) {
-        return res.send( `<h1>Esta é uma mensagem amigável de erro :P</h1><br><h2>O que aconteceu foi o seguinte:</h2><br><h2>${error}</h2>`)
+        return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
     }
 })
 
@@ -167,9 +168,9 @@ app.delete('/ligas/:id', async (req, res) => {
     try{
         const liga_ID = req.params.id
         const apagando_liga = await Ligas.destroy({ where: { ID: liga_ID } })
-        res.send({ action: 'Apagando Liga', apagando_liga: liga_ID })
+        res.json({ apagando_liga })
     } catch (error) {
-        return res.send( `<h1>Esta é uma mensagem amigável de erro :P</h1><br><h2>O que aconteceu foi o seguinte:</h2><br><h2>${error}</h2>`)
+        return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
     }
 })
 
@@ -220,7 +221,6 @@ app.delete('/ligas/:id', async (req, res) => {
 //     })
 // })
 
-
 //GET Mostrar UM clube atualizado
 // app.get('/clubatualizado/:id', async (req, res) =>{
 //     const clube_ID = req.params.id
@@ -228,7 +228,6 @@ app.delete('/ligas/:id', async (req, res) => {
 //     // res.json({ clube })
 //     res.render('clubatualizado', { clubes: clube, port: port })
 // })
-
 
 app.listen (port, () => {
     console.log (` Server funcionando no porto ${ port } `.red.bgWhite.italic.bold)
