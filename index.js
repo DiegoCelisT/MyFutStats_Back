@@ -26,10 +26,20 @@ app.use(cors())
 
 
 //Chamando o modelo e fazendo a conexão com a BD (O nome da primeira constante deve ser o valor retornado no modelo de clubes.js):
-const Clubes = require ('./models/clubes')
-const clubesAll = Clubes ( sequelize, DataTypes)
 const Liga = require ('./models/liga')
 const Ligas = Liga ( sequelize, DataTypes)
+const Clubes = require ('./models/clubes')
+const clubesAll = Clubes ( sequelize, DataTypes)
+const Clubes2 = require ('./models/clubes2')
+const clubes2All = Clubes2 ( sequelize, DataTypes)
+const Clubes3 = require ('./models/clubes3')
+const clubes3All = Clubes3 ( sequelize, DataTypes)
+const Clubes4 = require ('./models/clubes4')
+const clubes4All = Clubes4 ( sequelize, DataTypes)
+const Clubes5 = require ('./models/clubes5')
+const clubes5All = Clubes5 ( sequelize, DataTypes)
+const Clubes6 = require ('./models/clubes6')
+const clubes6All = Clubes6 ( sequelize, DataTypes)
 
 // Constante para utilizar o porto desde os templates
 const port = 3030
@@ -44,20 +54,62 @@ app.get ('', (req, res) =>{
     res.send ('Página principal :P')
 })
 
-//GET Mostrar todos os clubes
+//GETS Mostrar todos os clubes
 app.get('/clubes', async (req, res) =>{    
     const clubes = await clubesAll.findAll()
-    // res.render('clubes', { clubes: clubes, port: port })
+    res.json ({ clubes })
+})
+app.get('/clubes2', async (req, res) =>{    
+    const clubes = await clubes2All.findAll()
+    res.json ({ clubes })
+})
+app.get('/clubes3', async (req, res) =>{    
+    const clubes = await clubes3All.findAll()
+    res.json ({ clubes })
+})
+app.get('/clubes4', async (req, res) =>{    
+    const clubes = await clubes4All.findAll()
+    res.json ({ clubes })
+})
+app.get('/clubes5', async (req, res) =>{    
+    const clubes = await clubes5All.findAll()
+    res.json ({ clubes })
+})
+app.get('/clubes6', async (req, res) =>{    
+    const clubes = await clubes6All.findAll()
     res.json ({ clubes })
 })
 
-//GET Mostrar UM clube só (por ID):
+//GETS Mostrar UM clube só (por ID):
 app.get('/clube/:id', async (req, res) =>{
     const clube_ID = req.params.id //Aqui tô pegando o parametro id da requisição app.get('/clubes/:id'... [os dois pontos chutam esse parametro para o "params"]
     const clube = await clubesAll.findByPk(clube_ID)
-    console.log(clube_ID);
     res.json({ clube })
-    // res.render('clube', { clubes: clube, port: port })
+})
+app.get('/clube2/:id', async (req, res) =>{
+    const clube2_ID = req.params.id
+    const clube2 = await clubes2All.findByPk(clube2_ID)
+    res.json({ clube2 })
+})
+app.get('/clube3/:id', async (req, res) =>{
+    const clube3_ID = req.params.id
+    const clube3 = await clubes3All.findByPk(clube3_ID)
+    res.json({ clube3 })
+})
+app.get('/clube4/:id', async (req, res) =>{
+    const clube4_ID = req.params.id
+    const clube4 = await clubes4All.findByPk(clube4_ID)
+    res.json({ clube4 })
+})
+app.get('/clube5/:id', async (req, res) =>{
+    const clube5_ID = req.params.id
+    const clube5 = await clubes5All.findByPk(clube5_ID)
+    res.json({ clube5 })
+})
+app.get('/clube6/:id', async (req, res) =>{
+    const clube6_ID = req.params.id
+    const clube6 = await clubes6All.findByPk(clube6_ID)
+    res.json({ clube6 })
 })
 
 //POST Criar clubes:
@@ -81,8 +133,108 @@ app.post('/novoclub', async (req, res) => {
     })
     res.json({ novo_clube })
 })
+app.post('/novoclub2', async (req, res) => {
+    const body2 = req.body
+    const jogadosEquation = body2.vitorias+body2.empates+body2.derrotas
+    const pontosEquation = (3*body2.vitorias)+body2.empates
+    const saldoGolsEquation = body2.golsPro-body2.golsContra
+    const novo_clube2 = await clubes2All.create({
+        name: body2.name,
+        urlShield: body2.urlShield,
+        country: body2.country,
+        pontos: pontosEquation,
+        jogados: jogadosEquation,
+        vitorias: body2.vitorias,
+        empates: body2.empates,
+        derrotas: body2.derrotas,
+        golsPro: body2.golsPro,
+        golsContra: body2.golsContra,
+        saldoGols: saldoGolsEquation
+    })
+    res.json({ novo_clube2 })
+})
+app.post('/novoclub3', async (req, res) => {
+    const body = req.body
+    const jogadosEquation = body.vitorias+body.empates+body.derrotas
+    const pontosEquation = (3*body.vitorias)+body.empates
+    const saldoGolsEquation = body.golsPro-body.golsContra
+    const novo_clube3 = await clubes3All.create({
+        name: body.name,
+        urlShield: body.urlShield,
+        country: body.country,
+        pontos: pontosEquation,
+        jogados: jogadosEquation,
+        vitorias: body.vitorias,
+        empates: body.empates,
+        derrotas: body.derrotas,
+        golsPro: body.golsPro,
+        golsContra: body.golsContra,
+        saldoGols: saldoGolsEquation
+    })
+    res.json({ novo_clube3 })
+})
+app.post('/novoclub4', async (req, res) => {
+    const body = req.body
+    const jogadosEquation = body.vitorias+body.empates+body.derrotas
+    const pontosEquation = (3*body.vitorias)+body.empates
+    const saldoGolsEquation = body.golsPro-body.golsContra
+    const novo_clube4 = await clubes4All.create({
+        name: body.name,
+        urlShield: body.urlShield,
+        country: body.country,
+        pontos: pontosEquation,
+        jogados: jogadosEquation,
+        vitorias: body.vitorias,
+        empates: body.empates,
+        derrotas: body.derrotas,
+        golsPro: body.golsPro,
+        golsContra: body.golsContra,
+        saldoGols: saldoGolsEquation
+    })
+    res.json({ novo_clube4 })
+})
+app.post('/novoclub5', async (req, res) => {
+    const body = req.body
+    const jogadosEquation = body.vitorias+body.empates+body.derrotas
+    const pontosEquation = (3*body.vitorias)+body.empates
+    const saldoGolsEquation = body.golsPro-body.golsContra
+    const novo_clube5 = await clubes5All.create({
+        name: body.name,
+        urlShield: body.urlShield,
+        country: body.country,
+        pontos: pontosEquation,
+        jogados: jogadosEquation,
+        vitorias: body.vitorias,
+        empates: body.empates,
+        derrotas: body.derrotas,
+        golsPro: body.golsPro,
+        golsContra: body.golsContra,
+        saldoGols: saldoGolsEquation
+    })
+    res.json({ novo_clube5 })
+})
+app.post('/novoclub6', async (req, res) => {
+    const body = req.body
+    const jogadosEquation = body.vitorias+body.empates+body.derrotas
+    const pontosEquation = (3*body.vitorias)+body.empates
+    const saldoGolsEquation = body.golsPro-body.golsContra
+    const novo_clube6 = await clubes6All.create({
+        name: body.name,
+        urlShield: body.urlShield,
+        country: body.country,
+        pontos: pontosEquation,
+        jogados: jogadosEquation,
+        vitorias: body.vitorias,
+        empates: body.empates,
+        derrotas: body.derrotas,
+        golsPro: body.golsPro,
+        golsContra: body.golsContra,
+        saldoGols: saldoGolsEquation
+    })
+    res.json({ novo_clube6 })
+})
 
-//PUT Atualizar um clube (uso de try catch para pegar os erros e que não fique carregando):
+//PUTS Atualizar um clube (uso de try catch para pegar os erros e que não fique carregando):
 app.put('/editclube/:id', async (req, res) =>{
     try{
         const clube_ID = req.params.id
