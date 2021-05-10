@@ -3,35 +3,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     
-    await queryInterface.bulkInsert('Clubes',[{
-      name: 'Manchester United',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/pt/b/b6/Manchester_United_FC_logo.png',
-      country: 'Inglaterra',
-      pontos: 12,
-      jogados: 4,
-      vitorias: 4,
-      empates: 0,
-      derrotas: 0,
-      golsPro: 22,
-      golsContra: 14,
-      saldoGols: 8,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },{
-      name: 'Real Madrid',
-      urlShield: 'http://3.bp.blogspot.com/-Kb18Gbh9lgw/UXhKCmt1bmI/AAAAAAAAD9Y/h8keAQnU70I/s1600/logo_escudo_simbolo_realmadrid_5.png',
-      country: 'Espanha',
-      pontos: 12,
-      jogados: 5,
-      vitorias: 4,
-      empates: 0,
-      derrotas: 1,
-      golsPro: 20,
-      golsContra: 14,
-      saldoGols: 6,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },{
+    await queryInterface.bulkInsert('Clubes3s',[{
       name: 'Borussia Dortmund',
       urlShield: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/1200px-Borussia_Dortmund_logo.svg.png',
       country: 'Alemanha',

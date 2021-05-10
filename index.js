@@ -26,10 +26,20 @@ app.use(cors())
 
 
 //Chamando o modelo e fazendo a conexão com a BD (O nome da primeira constante deve ser o valor retornado no modelo de clubes.js):
-const Clubes = require ('./models/clubes')
-const clubesAll = Clubes ( sequelize, DataTypes)
 const Liga = require ('./models/liga')
 const Ligas = Liga ( sequelize, DataTypes)
+const Clubes = require ('./models/clubes')
+const clubesAll = Clubes ( sequelize, DataTypes)
+const Clubes2 = require ('./models/clubes2')
+const clubes2All = Clubes2 ( sequelize, DataTypes)
+const Clubes3 = require ('./models/clubes3')
+const clubes3All = Clubes3 ( sequelize, DataTypes)
+const Clubes4 = require ('./models/clubes4')
+const clubes4All = Clubes4 ( sequelize, DataTypes)
+const Clubes5 = require ('./models/clubes5')
+const clubes5All = Clubes5 ( sequelize, DataTypes)
+const Clubes6 = require ('./models/clubes6')
+const clubes6All = Clubes6 ( sequelize, DataTypes)
 
 // Constante para utilizar o porto desde os templates
 const port = 3030
@@ -44,23 +54,65 @@ app.get ('', (req, res) =>{
     res.send ('Página principal :P')
 })
 
-//GET Mostrar todos os clubes
+//GETS Mostrar todos os clubes
 app.get('/clubes', async (req, res) =>{    
     const clubes = await clubesAll.findAll()
-    // res.render('clubes', { clubes: clubes, port: port })
+    res.json ({ clubes })
+})
+app.get('/clubes2', async (req, res) =>{    
+    const clubes = await clubes2All.findAll()
+    res.json ({ clubes })
+})
+app.get('/clubes3', async (req, res) =>{    
+    const clubes = await clubes3All.findAll()
+    res.json ({ clubes })
+})
+app.get('/clubes4', async (req, res) =>{    
+    const clubes = await clubes4All.findAll()
+    res.json ({ clubes })
+})
+app.get('/clubes5', async (req, res) =>{    
+    const clubes = await clubes5All.findAll()
+    res.json ({ clubes })
+})
+app.get('/clubes6', async (req, res) =>{    
+    const clubes = await clubes6All.findAll()
     res.json ({ clubes })
 })
 
-//GET Mostrar UM clube só (por ID):
+//GETS Mostrar UM clube só (por ID):
 app.get('/clube/:id', async (req, res) =>{
     const clube_ID = req.params.id //Aqui tô pegando o parametro id da requisição app.get('/clubes/:id'... [os dois pontos chutam esse parametro para o "params"]
     const clube = await clubesAll.findByPk(clube_ID)
-    console.log(clube_ID);
     res.json({ clube })
-    // res.render('clube', { clubes: clube, port: port })
+})
+app.get('/clube2/:id', async (req, res) =>{
+    const clube_ID = req.params.id
+    const clube = await clubes2All.findByPk(clube_ID)
+    res.json({ clube })
+})
+app.get('/clube3/:id', async (req, res) =>{
+    const clube_ID = req.params.id
+    const clube = await clubes3All.findByPk(clube_ID)
+    res.json({ clube })
+})
+app.get('/clube4/:id', async (req, res) =>{
+    const clube_ID = req.params.id
+    const clube = await clubes4All.findByPk(clube_ID)
+    res.json({ clube })
+})
+app.get('/clube5/:id', async (req, res) =>{
+    const clube_ID = req.params.id
+    const clube = await clubes5All.findByPk(clube_ID)
+    res.json({ clube })
+})
+app.get('/clube6/:id', async (req, res) =>{
+    const clube_ID = req.params.id
+    const clube = await clubes6All.findByPk(clube_ID)
+    res.json({ clube })
 })
 
-//POST Criar clubes:
+//POSTS para criar clubes:
 app.post('/novoclub', async (req, res) => {
     const body = req.body
     const jogadosEquation = body.vitorias+body.empates+body.derrotas
@@ -81,18 +133,116 @@ app.post('/novoclub', async (req, res) => {
     })
     res.json({ novo_clube })
 })
+app.post('/novoclub2', async (req, res) => {
+    const body = req.body
+    const jogadosEquation = body.vitorias+body.empates+body.derrotas
+    const pontosEquation = (3*body.vitorias)+body.empates
+    const saldoGolsEquation = body.golsPro-body.golsContra
+    const novo_clube = await clubes2All.create({
+        name: body.name,
+        urlShield: body.urlShield,
+        country: body.country,
+        pontos: pontosEquation,
+        jogados: jogadosEquation,
+        vitorias: body.vitorias,
+        empates: body.empates,
+        derrotas: body.derrotas,
+        golsPro: body.golsPro,
+        golsContra: body.golsContra,
+        saldoGols: saldoGolsEquation
+    })
+    res.json({ novo_clube })
+})
+app.post('/novoclub3', async (req, res) => {
+    const body = req.body
+    const jogadosEquation = body.vitorias+body.empates+body.derrotas
+    const pontosEquation = (3*body.vitorias)+body.empates
+    const saldoGolsEquation = body.golsPro-body.golsContra
+    const novo_clube = await clubes3All.create({
+        name: body.name,
+        urlShield: body.urlShield,
+        country: body.country,
+        pontos: pontosEquation,
+        jogados: jogadosEquation,
+        vitorias: body.vitorias,
+        empates: body.empates,
+        derrotas: body.derrotas,
+        golsPro: body.golsPro,
+        golsContra: body.golsContra,
+        saldoGols: saldoGolsEquation
+    })
+    res.json({ novo_clube })
+})
+app.post('/novoclub4', async (req, res) => {
+    const body = req.body
+    const jogadosEquation = body.vitorias+body.empates+body.derrotas
+    const pontosEquation = (3*body.vitorias)+body.empates
+    const saldoGolsEquation = body.golsPro-body.golsContra
+    const novo_clube = await clubes4All.create({
+        name: body.name,
+        urlShield: body.urlShield,
+        country: body.country,
+        pontos: pontosEquation,
+        jogados: jogadosEquation,
+        vitorias: body.vitorias,
+        empates: body.empates,
+        derrotas: body.derrotas,
+        golsPro: body.golsPro,
+        golsContra: body.golsContra,
+        saldoGols: saldoGolsEquation
+    })
+    res.json({ novo_clube })
+})
+app.post('/novoclub5', async (req, res) => {
+    const body = req.body
+    const jogadosEquation = body.vitorias+body.empates+body.derrotas
+    const pontosEquation = (3*body.vitorias)+body.empates
+    const saldoGolsEquation = body.golsPro-body.golsContra
+    const novo_clube = await clubes5All.create({
+        name: body.name,
+        urlShield: body.urlShield,
+        country: body.country,
+        pontos: pontosEquation,
+        jogados: jogadosEquation,
+        vitorias: body.vitorias,
+        empates: body.empates,
+        derrotas: body.derrotas,
+        golsPro: body.golsPro,
+        golsContra: body.golsContra,
+        saldoGols: saldoGolsEquation
+    })
+    res.json({ novo_clube })
+})
+app.post('/novoclub6', async (req, res) => {
+    const body = req.body
+    const jogadosEquation = body.vitorias+body.empates+body.derrotas
+    const pontosEquation = (3*body.vitorias)+body.empates
+    const saldoGolsEquation = body.golsPro-body.golsContra
+    const novo_clube = await clubes6All.create({
+        name: body.name,
+        urlShield: body.urlShield,
+        country: body.country,
+        pontos: pontosEquation,
+        jogados: jogadosEquation,
+        vitorias: body.vitorias,
+        empates: body.empates,
+        derrotas: body.derrotas,
+        golsPro: body.golsPro,
+        golsContra: body.golsContra,
+        saldoGols: saldoGolsEquation
+    })
+    res.json({ novo_clube })
+})
 
-//PUT Atualizar um clube (uso de try catch para pegar os erros e que não fique carregando):
+//PUTS Atualizar um clube (uso de try catch para pegar os erros e que não fique carregando):
 app.put('/editclube/:id', async (req, res) =>{
     try{
         const clube_ID = req.params.id
         const body = req.body
-        
         const jogadosEquation = body.vitorias+body.empates+body.derrotas
         const pontosEquation = (3*body.vitorias)+body.empates
         const saldoGolsEquation = body.golsPro-body.golsContra
         //Com essas equações se a requisição é feita parcialmente desde o back, então os valores não enviados vão chegar como nulls pois dependen do "body" da requisição, isso foi solucionado no front melhorando a lógica em que o formulário é enviado.
-        
         const clube = await clubesAll.findByPk(clube_ID)
         clube.update({
             name: body.name,
@@ -105,8 +255,7 @@ app.put('/editclube/:id', async (req, res) =>{
             derrotas: body.derrotas,
             golsPro: body.golsPro,
             golsContra: body.golsContra,
-            saldoGols: saldoGolsEquation,
-            position: body.position //Só no PUT porque na nossa lógica de negócio só se pode editar ela, não criar desde POST
+            saldoGols: saldoGolsEquation
         });        
         res.json({ clube })
     } catch (error) {
@@ -114,18 +263,199 @@ app.put('/editclube/:id', async (req, res) =>{
     }
 })
 
-// DELETE Apagar um clube
+app.put('/editclube2/:id', async (req, res) =>{
+    try{
+        const clube_ID = req.params.id
+        const body = req.body
+        const jogadosEquation = body.vitorias+body.empates+body.derrotas
+        const pontosEquation = (3*body.vitorias)+body.empates
+        const saldoGolsEquation = body.golsPro-body.golsContra        
+        const clube = await clubes2All.findByPk(clube_ID)
+        clube.update({
+            name: body.name,
+            urlShield: body.urlShield,
+            country: body.country,
+            pontos: pontosEquation,
+            jogados: jogadosEquation,
+            vitorias: body.vitorias,
+            empates: body.empates,
+            derrotas: body.derrotas,
+            golsPro: body.golsPro,
+            golsContra: body.golsContra,
+            saldoGols: saldoGolsEquation
+        });        
+        res.json({ clube })
+    } catch (error) {
+        return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
+    }
+})
+
+app.put('/editclube3/:id', async (req, res) =>{
+    try{
+        const clube_ID = req.params.id
+        const body = req.body
+        const jogadosEquation = body.vitorias+body.empates+body.derrotas
+        const pontosEquation = (3*body.vitorias)+body.empates
+        const saldoGolsEquation = body.golsPro-body.golsContra        
+        const clube = await clubes3All.findByPk(clube_ID)
+        clube.update({
+            name: body.name,
+            urlShield: body.urlShield,
+            country: body.country,
+            pontos: pontosEquation,
+            jogados: jogadosEquation,
+            vitorias: body.vitorias,
+            empates: body.empates,
+            derrotas: body.derrotas,
+            golsPro: body.golsPro,
+            golsContra: body.golsContra,
+            saldoGols: saldoGolsEquation
+        });        
+        res.json({ clube })
+    } catch (error) {
+        return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
+    }
+})
+
+app.put('/editclube4/:id', async (req, res) =>{
+    try{
+        const clube_ID = req.params.id
+        const body = req.body
+        const jogadosEquation = body.vitorias+body.empates+body.derrotas
+        const pontosEquation = (3*body.vitorias)+body.empates
+        const saldoGolsEquation = body.golsPro-body.golsContra        
+        const clube = await clubes4All.findByPk(clube_ID)
+        clube.update({
+            name: body.name,
+            urlShield: body.urlShield,
+            country: body.country,
+            pontos: pontosEquation,
+            jogados: jogadosEquation,
+            vitorias: body.vitorias,
+            empates: body.empates,
+            derrotas: body.derrotas,
+            golsPro: body.golsPro,
+            golsContra: body.golsContra,
+            saldoGols: saldoGolsEquation
+        });        
+        res.json({ clube })
+    } catch (error) {
+        return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
+    }
+})
+
+app.put('/editclube5/:id', async (req, res) =>{
+    try{
+        const clube_ID = req.params.id
+        const body = req.body
+        const jogadosEquation = body.vitorias+body.empates+body.derrotas
+        const pontosEquation = (3*body.vitorias)+body.empates
+        const saldoGolsEquation = body.golsPro-body.golsContra        
+        const clube = await clubes5All.findByPk(clube_ID)
+        clube.update({
+            name: body.name,
+            urlShield: body.urlShield,
+            country: body.country,
+            pontos: pontosEquation,
+            jogados: jogadosEquation,
+            vitorias: body.vitorias,
+            empates: body.empates,
+            derrotas: body.derrotas,
+            golsPro: body.golsPro,
+            golsContra: body.golsContra,
+            saldoGols: saldoGolsEquation
+        });        
+        res.json({ clube })
+    } catch (error) {
+        return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
+    }
+})
+
+app.put('/editclube6/:id', async (req, res) =>{
+    try{
+        const clube_ID = req.params.id
+        const body = req.body
+        const jogadosEquation = body.vitorias+body.empates+body.derrotas
+        const pontosEquation = (3*body.vitorias)+body.empates
+        const saldoGolsEquation = body.golsPro-body.golsContra        
+        const clube = await clubes6All.findByPk(clube_ID)
+        clube.update({
+            name: body.name,
+            urlShield: body.urlShield,
+            country: body.country,
+            pontos: pontosEquation,
+            jogados: jogadosEquation,
+            vitorias: body.vitorias,
+            empates: body.empates,
+            derrotas: body.derrotas,
+            golsPro: body.golsPro,
+            golsContra: body.golsContra,
+            saldoGols: saldoGolsEquation
+        });        
+        res.json({ clube })
+    } catch (error) {
+        return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
+    }
+})
+
+
+// DELETES Apagar um clube
 app.delete('/clube/:id', async (req, res) => {
     try{
         const clube_ID = req.params.id
         const clube = await clubesAll.destroy({ where: { ID: clube_ID } })
         // res.send({ action: 'Apagando Clube', apagando_clube: clube_ID })
-        res.json({ clube })
-        
+        res.json({ clube }) 
     } catch (error) {
         return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
     }
 })
+app.delete('/clube2/:id', async (req, res) => {
+    try{
+        const clube_ID = req.params.id
+        const clube = await clubes2All.destroy({ where: { ID: clube_ID } })
+        res.json({ clube })
+    } catch (error) {
+        return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
+    }
+})
+app.delete('/clube3/:id', async (req, res) => {
+    try{
+        const clube_ID = req.params.id
+        const clube = await clubes3All.destroy({ where: { ID: clube_ID } })
+        res.json({ clube })
+    } catch (error) {
+        return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
+    }
+})
+app.delete('/clube4/:id', async (req, res) => {
+    try{
+        const clube_ID = req.params.id
+        const clube = await clubes4All.destroy({ where: { ID: clube_ID } })
+        res.json({ clube })
+    } catch (error) {
+        return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
+    }
+})
+app.delete('/clube5/:id', async (req, res) => {
+    try{
+        const clube_ID = req.params.id
+        const clube = await clubes5All.destroy({ where: { ID: clube_ID } })
+        res.json({ clube })
+    } catch (error) {
+        return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
+    }
+})
+app.delete('/clube6/:id', async (req, res) => {
+    try{
+        const clube_ID = req.params.id
+        const clube = await clubes6All.destroy({ where: { ID: clube_ID } })
+        res.json({ clube })
+    } catch (error) {
+        return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
+    }
+})
+
 
 //VERBOS PARA A TABELA DE LIGAS
 
