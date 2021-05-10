@@ -55,7 +55,7 @@ app.get ('', (req, res) =>{
 })
 
 //GETS Mostrar todos os clubes
-app.get('/clubes', async (req, res) =>{    
+app.get('/clubes1', async (req, res) =>{    
     const clubes = await clubesAll.findAll()
     res.json ({ clubes })
 })
@@ -81,7 +81,7 @@ app.get('/clubes6', async (req, res) =>{
 })
 
 //GETS Mostrar UM clube só (por ID):
-app.get('/clube/:id', async (req, res) =>{
+app.get('/clube1/:id', async (req, res) =>{
     const clube_ID = req.params.id //Aqui tô pegando o parametro id da requisição app.get('/clubes/:id'... [os dois pontos chutam esse parametro para o "params"]
     const clube = await clubesAll.findByPk(clube_ID)
     res.json({ clube })
@@ -113,7 +113,7 @@ app.get('/clube6/:id', async (req, res) =>{
 })
 
 //POSTS para criar clubes:
-app.post('/novoclub', async (req, res) => {
+app.post('/novoclub1', async (req, res) => {
     const body = req.body
     const jogadosEquation = body.vitorias+body.empates+body.derrotas
     const pontosEquation = (3*body.vitorias)+body.empates
@@ -235,7 +235,7 @@ app.post('/novoclub6', async (req, res) => {
 })
 
 //PUTS Atualizar um clube (uso de try catch para pegar os erros e que não fique carregando):
-app.put('/editclube/:id', async (req, res) =>{
+app.put('/editclube1/:id', async (req, res) =>{
     try{
         const clube_ID = req.params.id
         const body = req.body
@@ -400,7 +400,7 @@ app.put('/editclube6/:id', async (req, res) =>{
 
 
 // DELETES Apagar um clube
-app.delete('/clube/:id', async (req, res) => {
+app.delete('/deleteClube1/:id', async (req, res) => {
     try{
         const clube_ID = req.params.id
         const clube = await clubesAll.destroy({ where: { ID: clube_ID } })
@@ -410,7 +410,7 @@ app.delete('/clube/:id', async (req, res) => {
         return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
     }
 })
-app.delete('/clube2/:id', async (req, res) => {
+app.delete('/deleteClube2/:id', async (req, res) => {
     try{
         const clube_ID = req.params.id
         const clube = await clubes2All.destroy({ where: { ID: clube_ID } })
@@ -419,7 +419,7 @@ app.delete('/clube2/:id', async (req, res) => {
         return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
     }
 })
-app.delete('/clube3/:id', async (req, res) => {
+app.delete('/deleteClube3/:id', async (req, res) => {
     try{
         const clube_ID = req.params.id
         const clube = await clubes3All.destroy({ where: { ID: clube_ID } })
@@ -428,7 +428,7 @@ app.delete('/clube3/:id', async (req, res) => {
         return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
     }
 })
-app.delete('/clube4/:id', async (req, res) => {
+app.delete('/deleteClube4/:id', async (req, res) => {
     try{
         const clube_ID = req.params.id
         const clube = await clubes4All.destroy({ where: { ID: clube_ID } })
@@ -437,7 +437,7 @@ app.delete('/clube4/:id', async (req, res) => {
         return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
     }
 })
-app.delete('/clube5/:id', async (req, res) => {
+app.delete('/deleteClube5/:id', async (req, res) => {
     try{
         const clube_ID = req.params.id
         const clube = await clubes5All.destroy({ where: { ID: clube_ID } })
@@ -446,7 +446,7 @@ app.delete('/clube5/:id', async (req, res) => {
         return res.send( `Esta é uma mensagem amigável de erro :P. O que aconteceu foi o seguinte:${error}`)
     }
 })
-app.delete('/clube6/:id', async (req, res) => {
+app.delete('/deleteClube6/:id', async (req, res) => {
     try{
         const clube_ID = req.params.id
         const clube = await clubes6All.destroy({ where: { ID: clube_ID } })
