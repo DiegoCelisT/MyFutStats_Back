@@ -13,4 +13,7 @@ npx sequelize-cli db:migrate
 ## Sementes:
 npx sequelize-cli db:seed:all
 
+## Inicializar o Servidor
+npm run dev
+
 ## Curtir!
