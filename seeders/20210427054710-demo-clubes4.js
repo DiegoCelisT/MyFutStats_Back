@@ -20,7 +20,7 @@ module.exports = {
     
     },{
       name: 'Pyramids',
-      urlShield: 'https://4.bp.blogspot.com/-xKPqwHaUZ7M/Wzagt5SsJnI/AAAAAAAA5yA/sIhNdgnrCr005LnzvFDrwoKIEUd05BnsACLcBGAs/s1600/PIRAMIDS%2BFC-EGI.png',
+      urlShield: 'https://i.pinimg.com/originals/9a/02/89/9a0289010355f3922e4a16360f9a46f1.png',
       country: 'Egito',
       pontos: 9,
       jogados: 5,
