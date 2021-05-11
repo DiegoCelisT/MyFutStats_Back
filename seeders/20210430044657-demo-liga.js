@@ -19,6 +19,16 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
       },{
+      name: 'Batatoters',
+      active: true,
+      createdAt: new Date(),
+      updatedAt: new Date()
+      },{
+      name: 'Great Devs',
+      active: true,
+      createdAt: new Date(),
+      updatedAt: new Date()
+      },{
       name: 'Premier Champs',
       active: true,
       createdAt: new Date(),
