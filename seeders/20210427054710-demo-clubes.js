@@ -46,21 +46,6 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },{
-      name: 'PSG',
-      urlShield: 'https://a1.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fsoccer%2F500%2F160.png',
-      country: 'França',
-      pontos: 6,
-      jogados: 5,
-      vitorias: 1,
-      empates: 3,
-      derrotas: 1,
-      golsPro: 22,
-      golsContra: 24,
-      saldoGols: -2,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    
-    },{
       name: 'Boca Juniors',
       urlShield: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Boca_Juniors_logo18.svg/1200px-Boca_Juniors_logo18.svg.png',
       country: 'Argentina',
@@ -72,20 +57,6 @@ module.exports = {
       golsPro: 16,
       golsContra: 6,
       saldoGols: 10,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },{
-      name: 'América de Cali',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Escudo_de_Am%C3%A9rica_de_Cali.png',
-      country: 'Colômbia',
-      pontos: 9,
-      jogados: 5,
-      vitorias: 2,
-      empates: 3,
-      derrotas: 0,
-      golsPro: 19,
-      golsContra: 18,
-      saldoGols: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },{

@@ -4,9 +4,9 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     
     await queryInterface.bulkInsert('Clubes5s',[{
-      name: 'Boca Juniors',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Boca_Juniors_logo18.svg/1200px-Boca_Juniors_logo18.svg.png',
-      country: 'Argentina',
+      name: 'Wolfsburgo',
+      urlShield: 'https://i.pinimg.com/originals/dd/dc/45/dddc45e2912361288c6b4476a97270d1.png',
+      country: 'Alemanha',
       pontos: 9,
       jogados: 5,
       vitorias: 2,
@@ -18,9 +18,9 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },{
-      name: 'América de Cali',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Escudo_de_Am%C3%A9rica_de_Cali.png',
-      country: 'Colômbia',
+      name: 'Napoli',
+      urlShield: 'https://logodownload.org/wp-content/uploads/2017/11/napoli-logo-escudo-1.png',
+      country: 'Italia',
       pontos: 9,
       jogados: 5,
       vitorias: 2,
@@ -32,9 +32,9 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },{
-      name: 'Chivas',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/Guadalajara_CD.svg/1200px-Guadalajara_CD.svg.png',
-      country: 'México',
+      name: 'Sevilla',
+      urlShield: 'https://4.bp.blogspot.com/-xWxHoCVUdqI/WVQRr_ZxEvI/AAAAAAABKQ8/KjRTikRIMt83heP-3Vi9FIegrzmoZlSVgCLcBGAs/s1600/Sevilla%2BFC.png',
+      country: 'Espanha',
       pontos: 3,
       jogados: 4,
       vitorias: 0,
@@ -46,8 +46,8 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },{
-      name: 'Ind. Medellín',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Escudo_del_Deportivo_Independiente_Medell%C3%ADn.png',
+      name: 'Envigado',
+      urlShield: 'https://1.bp.blogspot.com/-f26u0pGWqT4/X59l4iHeu3I/AAAAAAABhOM/H9b5RKz8RNUK610J5ObSQXii6WDoCI2-ACLcBGAsYHQ/s512/Envigado%2BFC.png',
       country: 'Colômbia',
       pontos: 6,
       jogados: 4,
@@ -60,8 +60,8 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },{
-      name: 'Flamengo',
-      urlShield: 'https://escudo.biz/wp-content/uploads/2018/11/flamengo-escudo-4.png',
+      name: 'Fluminense',
+      urlShield: 'https://upload.wikimedia.org/wikipedia/pt/b/b1/FluminenseFCBA.png',
       country: 'Brasil',
       pontos: 6,
       jogados: 4,
@@ -74,9 +74,37 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },{
-      name: 'Santa Fé',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png',
-      country: 'Colômbia',
+      name: 'Olimpia',
+      urlShield: 'https://logodownload.org/wp-content/uploads/2019/04/olimpia-logo-escudo.png',
+      country: 'Paraguai',
+      pontos: 5,
+      jogados: 5,
+      vitorias: 1,
+      empates: 2,
+      derrotas: 2,
+      golsPro: 11,
+      golsContra: 18,
+      saldoGols: -7,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },{
+      name: 'Accra',
+      urlShield: 'https://www.escudosfc.com.br/images/heartsofoak.png',
+      country: 'Ghana',
+      pontos: 10,
+      jogados: 5,
+      vitorias: 3,
+      empates: 1,
+      derrotas: 1,
+      golsPro: 11,
+      golsContra: 8,
+      saldoGols: 3,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },{
+      name: 'Caracas FC',
+      urlShield: 'https://www.latingoles.com/wp-content/uploads/2019/02/caracas.png',
+      country: 'Venezuela',
       pontos: 10,
       jogados: 5,
       vitorias: 3,

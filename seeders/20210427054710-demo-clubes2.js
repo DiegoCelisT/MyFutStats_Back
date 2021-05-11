@@ -4,13 +4,13 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     
     await queryInterface.bulkInsert('Clubes2s',[{
-      name: 'Real Madrid',
-      urlShield: 'http://3.bp.blogspot.com/-Kb18Gbh9lgw/UXhKCmt1bmI/AAAAAAAAD9Y/h8keAQnU70I/s1600/logo_escudo_simbolo_realmadrid_5.png',
-      country: 'Espanha',
-      pontos: 12,
+      name: 'Grêmio',
+      urlShield: 'https://logodownload.org/wp-content/uploads/2017/02/gremio-logo-escudo.png',
+      country: 'Brasil',
+      pontos: 10,
       jogados: 5,
-      vitorias: 4,
-      empates: 0,
+      vitorias: 3,
+      empates: 1,
       derrotas: 1,
       golsPro: 20,
       golsContra: 14,
@@ -18,9 +18,9 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },{
-      name: 'Borussia Dortmund',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/1200px-Borussia_Dortmund_logo.svg.png',
-      country: 'Alemanha',
+      name: 'River Plate',
+      urlShield: 'https://imagensemoldes.com.br/wp-content/uploads/2020/03/Futebom-Escudo-River-Plate-PNG.png',
+      country: 'Argentina',
       pontos: 6,
       jogados: 5,
       vitorias: 1,
@@ -47,9 +47,9 @@ module.exports = {
       updatedAt: new Date()
     
     },{
-      name: 'Boca Juniors',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Boca_Juniors_logo18.svg/1200px-Boca_Juniors_logo18.svg.png',
-      country: 'Argentina',
+      name: 'Chelsea',
+      urlShield: 'https://logodownload.org/wp-content/uploads/2017/02/chelsea-fc-logo-2.png',
+      country: 'Inglaterra',
       pontos: 9,
       jogados: 5,
       vitorias: 2,
@@ -75,9 +75,9 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },{
-      name: 'Chivas',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/Guadalajara_CD.svg/1200px-Guadalajara_CD.svg.png',
-      country: 'México',
+      name: 'AC Milan',
+      urlShield: 'https://i.pinimg.com/originals/71/23/02/712302009427d546b13569aa7eeb8d6b.png',
+      country: 'Italia',
       pontos: 3,
       jogados: 4,
       vitorias: 0,
@@ -89,9 +89,9 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },{
-      name: 'Ind. Medellín',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Escudo_del_Deportivo_Independiente_Medell%C3%ADn.png',
-      country: 'Colômbia',
+      name: 'Miami',
+      urlShield: 'https://logodownload.org/wp-content/uploads/2020/11/Inter-miami-cf-logo-1.png',
+      country: 'USA',
       pontos: 6,
       jogados: 4,
       vitorias: 2,
@@ -103,9 +103,9 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },{
-      name: 'Flamengo',
-      urlShield: 'https://escudo.biz/wp-content/uploads/2018/11/flamengo-escudo-4.png',
-      country: 'Brasil',
+      name: 'Lokomotiv',
+      urlShield: 'https://www.futbox.com/img/v1/566/5ca/c1f/9cc/e75d036b9624332aae5e_zoom.png',
+      country: 'Rússia',
       pontos: 6,
       jogados: 4,
       vitorias: 1,
@@ -114,20 +114,6 @@ module.exports = {
       golsPro: 15,
       golsContra: 5,
       saldoGols: 10,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },{
-      name: 'Santa Fé',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png',
-      country: 'Colômbia',
-      pontos: 10,
-      jogados: 5,
-      vitorias: 3,
-      empates: 1,
-      derrotas: 1,
-      golsPro: 11,
-      golsContra: 8,
-      saldoGols: 3,
       createdAt: new Date(),
       updatedAt: new Date()
     }]);
