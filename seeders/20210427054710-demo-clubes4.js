@@ -4,9 +4,9 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     
     await queryInterface.bulkInsert('Clubes4s',[{
-      name: 'PSG',
-      urlShield: 'https://a1.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fsoccer%2F500%2F160.png',
-      country: 'França',
+      name: 'Orlando Pirates',
+      urlShield: 'https://i.pinimg.com/originals/1a/3b/e0/1a3be025ef2da146a718c1ea1144a520.png',
+      country: 'USA',
       pontos: 6,
       jogados: 5,
       vitorias: 1,
@@ -19,9 +19,9 @@ module.exports = {
       updatedAt: new Date()
     
     },{
-      name: 'Boca Juniors',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Boca_Juniors_logo18.svg/1200px-Boca_Juniors_logo18.svg.png',
-      country: 'Argentina',
+      name: 'Pyramids',
+      urlShield: 'https://4.bp.blogspot.com/-xKPqwHaUZ7M/Wzagt5SsJnI/AAAAAAAA5yA/sIhNdgnrCr005LnzvFDrwoKIEUd05BnsACLcBGAs/s1600/PIRAMIDS%2BFC-EGI.png',
+      country: 'Egito',
       pontos: 9,
       jogados: 5,
       vitorias: 2,
@@ -33,9 +33,9 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },{
-      name: 'América de Cali',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Escudo_de_Am%C3%A9rica_de_Cali.png',
-      country: 'Colômbia',
+      name: 'Leicester',
+      urlShield: 'https://upload.wikimedia.org/wikipedia/pt/0/0e/LeicesterCity_logo2014.png',
+      country: 'Inglaterra',
       pontos: 9,
       jogados: 5,
       vitorias: 2,
@@ -47,9 +47,9 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },{
-      name: 'Chivas',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/Guadalajara_CD.svg/1200px-Guadalajara_CD.svg.png',
-      country: 'México',
+      name: 'AS Roma',
+      urlShield: 'https://1.bp.blogspot.com/-fWlZhUcsxeY/XX2g4nj9DII/AAAAAAABV_k/omYH3ZAvbGYWkYe6g1DnZjB5R7yf6CmsQCLcBGAsYHQ/s1600/AS%2BRoma.png',
+      country: 'Italia',
       pontos: 3,
       jogados: 4,
       vitorias: 0,
@@ -61,9 +61,9 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },{
-      name: 'Ind. Medellín',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Escudo_del_Deportivo_Independiente_Medell%C3%ADn.png',
-      country: 'Colômbia',
+      name: 'CSKA Moscow',
+      urlShield: 'https://4.bp.blogspot.com/--xAP0FKSNKM/WVkuta4oXyI/AAAAAAABLN8/1hIcCnb8bZcPEbYYCb0WrALVspOvdIOsACLcBGAs/s1600/PFC%2BCSKA%2BMoscow.png',
+      country: 'Rússia',
       pontos: 6,
       jogados: 4,
       vitorias: 2,
@@ -75,9 +75,9 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },{
-      name: 'Flamengo',
-      urlShield: 'https://escudo.biz/wp-content/uploads/2018/11/flamengo-escudo-4.png',
-      country: 'Brasil',
+      name: 'San Lorenzo',
+      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/6/62/Escudo_del_Club_Atl%C3%A9tico_San_Lorenzo_de_Almagro.png',
+      country: 'Argentina',
       pontos: 6,
       jogados: 4,
       vitorias: 1,
@@ -89,9 +89,23 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },{
-      name: 'Santa Fé',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png',
-      country: 'Colômbia',
+      name: 'Barcelona',
+      urlShield: 'https://logodownload.org/wp-content/uploads/2015/05/Barcelona-logo-escudo.png',
+      country: 'Espanha',
+      pontos: 1,
+      jogados: 5,
+      vitorias: 0,
+      empates: 1,
+      derrotas: 4,
+      golsPro: 11,
+      golsContra: 22,
+      saldoGols: -11,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },{
+      name: 'Corinthians',
+      urlShield: 'https://i1.wp.com/dreamleaguesoccer.com.br/wp-content/uploads/2016/11/escudo-Corinthians.png?fit=512%2C512&ssl=1',
+      country: 'Brasil',
       pontos: 10,
       jogados: 5,
       vitorias: 3,
