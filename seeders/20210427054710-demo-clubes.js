@@ -5,7 +5,7 @@ module.exports = {
     
     await queryInterface.bulkInsert('Clubes',[{
       name: 'Manchester United',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/pt/b/b6/Manchester_United_FC_logo.png',
+      urlShield: 'https://i.postimg.cc/DZNBq7Rp/Manchester-United.png',
       country: 'Inglaterra',
       pontos: 12,
       jogados: 4,
@@ -19,7 +19,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Real Madrid',
-      urlShield: 'http://3.bp.blogspot.com/-Kb18Gbh9lgw/UXhKCmt1bmI/AAAAAAAAD9Y/h8keAQnU70I/s1600/logo_escudo_simbolo_realmadrid_5.png',
+      urlShield: 'https://i.postimg.cc/0Nbtr6BK/Real-Madrid.png',
       country: 'Espanha',
       pontos: 12,
       jogados: 5,
@@ -33,7 +33,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Borussia Dortmund',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/1200px-Borussia_Dortmund_logo.svg.png',
+      urlShield: 'https://i.postimg.cc/523c8FgP/Borussia-Dortmund.png',
       country: 'Alemanha',
       pontos: 6,
       jogados: 5,
@@ -47,7 +47,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Boca Juniors',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Boca_Juniors_logo18.svg/1200px-Boca_Juniors_logo18.svg.png',
+      urlShield: 'https://i.postimg.cc/FHXCWsz2/Boca-Juniors.png',
       country: 'Argentina',
       pontos: 9,
       jogados: 5,
@@ -61,7 +61,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Chivas',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/f0/Guadalajara_CD.svg/1200px-Guadalajara_CD.svg.png',
+      urlShield: 'https://i.postimg.cc/ZRNVFGZT/Chivas-Rayadas.png',
       country: 'México',
       pontos: 3,
       jogados: 4,
@@ -75,7 +75,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Ind. Medellín',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Escudo_del_Deportivo_Independiente_Medell%C3%ADn.png',
+      urlShield: 'https://i.postimg.cc/3JvbFD8X/Independiente-Medell-n.png',
       country: 'Colômbia',
       pontos: 6,
       jogados: 4,
@@ -89,7 +89,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Flamengo',
-      urlShield: 'https://escudo.biz/wp-content/uploads/2018/11/flamengo-escudo-4.png',
+      urlShield: 'https://i.postimg.cc/SRsbKQCZ/Flamengo.pngg',
       country: 'Brasil',
       pontos: 6,
       jogados: 4,
@@ -103,7 +103,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Santa Fé',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/5/58/Escudo_de_Independiente_Santa_Fe.png',
+      urlShield: 'https://i.postimg.cc/RCbjRBcB/Santa-F.png',
       country: 'Colômbia',
       pontos: 10,
       jogados: 5,

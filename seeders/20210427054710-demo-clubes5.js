@@ -5,7 +5,7 @@ module.exports = {
     
     await queryInterface.bulkInsert('Clubes5s',[{
       name: 'Wolfsburgo',
-      urlShield: 'https://i.pinimg.com/originals/dd/dc/45/dddc45e2912361288c6b4476a97270d1.png',
+      urlShield: 'https://i.postimg.cc/CKTmFb2v/Wolfsburgo.png',
       country: 'Alemanha',
       pontos: 9,
       jogados: 5,
@@ -19,7 +19,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Napoli',
-      urlShield: 'https://logodownload.org/wp-content/uploads/2017/11/napoli-logo-escudo-1.png',
+      urlShield: 'https://i.postimg.cc/c19hvpjt/Napoli.png',
       country: 'Italia',
       pontos: 9,
       jogados: 5,
@@ -33,7 +33,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Sevilla',
-      urlShield: 'https://4.bp.blogspot.com/-xWxHoCVUdqI/WVQRr_ZxEvI/AAAAAAABKQ8/KjRTikRIMt83heP-3Vi9FIegrzmoZlSVgCLcBGAs/s1600/Sevilla%2BFC.png',
+      urlShield: 'https://i.postimg.cc/50p3qT2G/Sevilla.png',
       country: 'Espanha',
       pontos: 3,
       jogados: 4,
@@ -47,7 +47,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Envigado',
-      urlShield: 'https://1.bp.blogspot.com/-f26u0pGWqT4/X59l4iHeu3I/AAAAAAABhOM/H9b5RKz8RNUK610J5ObSQXii6WDoCI2-ACLcBGAsYHQ/s512/Envigado%2BFC.png',
+      urlShield: 'https://i.postimg.cc/fbc5kJnM/Envigado.png',
       country: 'Colômbia',
       pontos: 10,
       jogados: 6,
@@ -61,7 +61,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Fluminense',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/pt/b/b1/FluminenseFCBA.png',
+      urlShield: 'https://i.postimg.cc/HxTzMddX/Fluminense.png',
       country: 'Brasil',
       pontos: 6,
       jogados: 4,
@@ -75,7 +75,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Olimpia',
-      urlShield: 'https://logodownload.org/wp-content/uploads/2019/04/olimpia-logo-escudo.png',
+      urlShield: 'https://i.postimg.cc/YqTx31tp/Olimpia.png',
       country: 'Paraguai',
       pontos: 5,
       jogados: 5,
@@ -89,7 +89,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Accra',
-      urlShield: 'https://www.escudosfc.com.br/images/heartsofoak.png',
+      urlShield: 'https://i.postimg.cc/4yd18PK3/Accra.png',
       country: 'Ghana',
       pontos: 10,
       jogados: 5,
@@ -103,7 +103,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Caracas FC',
-      urlShield: 'https://www.latingoles.com/wp-content/uploads/2019/02/caracas.png',
+      urlShield: 'https://i.postimg.cc/ht72W22z/Caracas.png',
       country: 'Venezuela',
       pontos: 10,
       jogados: 5,

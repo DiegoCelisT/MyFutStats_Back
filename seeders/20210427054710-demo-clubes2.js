@@ -5,7 +5,7 @@ module.exports = {
     
     await queryInterface.bulkInsert('Clubes2s',[{
       name: 'Grêmio',
-      urlShield: 'https://logodownload.org/wp-content/uploads/2017/02/gremio-logo-escudo.png',
+      urlShield: 'https://i.postimg.cc/jjGP4vsK/Gr-mio.png',
       country: 'Brasil',
       pontos: 10,
       jogados: 5,
@@ -19,7 +19,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'River Plate',
-      urlShield: 'https://imagensemoldes.com.br/wp-content/uploads/2020/03/Futebom-Escudo-River-Plate-PNG.png',
+      urlShield: 'https://i.postimg.cc/GhrPfMvm/River.png',
       country: 'Argentina',
       pontos: 6,
       jogados: 5,
@@ -33,7 +33,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'PSG',
-      urlShield: 'https://a1.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fsoccer%2F500%2F160.png',
+      urlShield: 'https://i.postimg.cc/T1jVwmvx/PSG.png',
       country: 'França',
       pontos: 6,
       jogados: 5,
@@ -48,7 +48,7 @@ module.exports = {
     
     },{
       name: 'Chelsea',
-      urlShield: 'https://logodownload.org/wp-content/uploads/2017/02/chelsea-fc-logo-2.png',
+      urlShield: 'https://i.postimg.cc/kggQJB1r/Chelsea.png',
       country: 'Inglaterra',
       pontos: 9,
       jogados: 5,
@@ -62,7 +62,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'América de Cali',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Escudo_de_Am%C3%A9rica_de_Cali.png',
+      urlShield: 'https://i.postimg.cc/VsXBDyrh/Am-rica-de-Cali.png',
       country: 'Colômbia',
       pontos: 9,
       jogados: 5,
@@ -76,7 +76,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'AC Milan',
-      urlShield: 'https://i.pinimg.com/originals/71/23/02/712302009427d546b13569aa7eeb8d6b.png',
+      urlShield: 'https://i.postimg.cc/YSVfyMz5/AC-Milan.png',
       country: 'Italia',
       pontos: 3,
       jogados: 4,
@@ -90,7 +90,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Miami',
-      urlShield: 'https://logodownload.org/wp-content/uploads/2020/11/Inter-miami-cf-logo-1.png',
+      urlShield: 'https://i.postimg.cc/zG2nV86y/Miami.png',
       country: 'USA',
       pontos: 6,
       jogados: 4,
@@ -104,7 +104,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Lokomotiv',
-      urlShield: 'https://www.futbox.com/img/v1/566/5ca/c1f/9cc/e75d036b9624332aae5e_zoom.png',
+      urlShield: 'https://i.postimg.cc/rmrGB3hK/Lokomotiv.png',
       country: 'Rússia',
       pontos: 6,
       jogados: 4,

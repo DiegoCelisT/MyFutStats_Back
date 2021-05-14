@@ -13,7 +13,7 @@ module.exports = {
       },
       urlShield: {
         type: Sequelize.STRING,
-        defaultValue: "https://www.clipartmax.com/png/full/19-194040_how-to-set-use-shield-grey-svg-vector-shield-template.png"
+        defaultValue: "https://i.postimg.cc/GtnwF08R/Default-Shield.png"
       },
       country: {
         type: Sequelize.STRING

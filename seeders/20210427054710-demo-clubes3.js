@@ -5,7 +5,7 @@ module.exports = {
     
     await queryInterface.bulkInsert('Clubes3s',[{
       name: 'Bayern Múnich',
-      urlShield: 'https://3.bp.blogspot.com/-gunJY3CHi9E/WVDEnsgA7rI/AAAAAAABJzs/oJrbBdyKUToGoBS42ikY6YkWAFTqEGwZgCLcBGAs/s1600/FC%2BBayern%2BMunchen.png',
+      urlShield: 'https://i.postimg.cc/zvLwrBqw/FC-Bayern-Munchen.png',
       country: 'Alemanha',
       pontos: 6,
       jogados: 5,
@@ -19,7 +19,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Peñarol',
-      urlShield: 'https://1.bp.blogspot.com/-G27DTvdHHRc/X78Fl0DZLWI/AAAAAAABhXQ/G-_dTZNoWGgZellZ1Q9-6eXVakSQ05tjgCLcBGAsYHQ/s512/Club%2BAtletico%2BPenarol.png',
+      urlShield: 'https://i.postimg.cc/GpQxPVMD/Pe-arol.png',
       country: 'Uruguai',
       pontos: 6,
       jogados: 5,
@@ -34,7 +34,7 @@ module.exports = {
     
     },{
       name: 'Alianza Lima',
-      urlShield: 'https://logodetimes.com/times/alianza-lima/logo-alianza-lima-512.png',
+      urlShield: 'https://i.postimg.cc/cJZcn0cZ/Alianza-Lima.png',
       country: 'Perú',
       pontos: 9,
       jogados: 5,
@@ -48,7 +48,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Inter de Milán',
-      urlShield: 'https://logodownload.org/wp-content/uploads/2017/02/inter-milan-logo-1.png',
+      urlShield: 'https://i.postimg.cc/sxtYDr2k/Inter-de-Mil-n.png',
       country: 'Italia',
       pontos: 9,
       jogados: 5,
@@ -62,7 +62,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Brentford',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/pt/5/5a/Brentford_FC.png',
+      urlShield: 'https://i.postimg.cc/j536mNYd/Brentford-FC.png',
       country: 'Inglaterra',
       pontos: 3,
       jogados: 4,
@@ -76,7 +76,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Atl. de Madrid',
-      urlShield: 'https://i.pinimg.com/originals/b9/43/5f/b9435f157a6a9a6ed4e73479fec554f2.png',
+      urlShield: 'https://i.postimg.cc/ncDKSCRp/Atl-tico-de-Madrid.png',
       country: 'Espanha',
       pontos: 6,
       jogados: 4,
@@ -90,7 +90,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Cerezo Osaka',
-      urlShield: 'https://i.pinimg.com/originals/89/fc/36/89fc36ec96c7398ea26e5c1ed6ed8b64.png',
+      urlShield: 'https://i.postimg.cc/bJwHmgMB/Cerezo-Osaka.png',
       country: 'Japão',
       pontos: 6,
       jogados: 4,
@@ -104,7 +104,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Kaizer Chiefs',
-      urlShield: 'https://i.pinimg.com/originals/d6/92/fb/d692fb3d4b56f3397924bc980bdd9a15.png',
+      urlShield: 'https://i.postimg.cc/SQ57GWGg/Kaizer-Chiefs.png',
       country: 'África do Sul',
       pontos: 10,
       jogados: 5,

@@ -5,7 +5,7 @@ module.exports = {
     
     await queryInterface.bulkInsert('Clubes4s',[{
       name: 'Orlando Pirates',
-      urlShield: 'https://i.pinimg.com/originals/1a/3b/e0/1a3be025ef2da146a718c1ea1144a520.png',
+      urlShield: 'https://i.postimg.cc/3RhJhb7t/Orlando-Pirates.png',
       country: 'USA',
       pontos: 6,
       jogados: 5,
@@ -20,7 +20,7 @@ module.exports = {
     
     },{
       name: 'Pyramids',
-      urlShield: 'https://i.pinimg.com/originals/9a/02/89/9a0289010355f3922e4a16360f9a46f1.png',
+      urlShield: 'https://i.postimg.cc/mrC20Gxc/Pyramids.png',
       country: 'Egito',
       pontos: 9,
       jogados: 5,
@@ -34,7 +34,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Leicester',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/pt/0/0e/LeicesterCity_logo2014.png',
+      urlShield: 'https://i.postimg.cc/pL9dJFqJ/Leicester.png',
       country: 'Inglaterra',
       pontos: 9,
       jogados: 5,
@@ -48,7 +48,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'AS Roma',
-      urlShield: 'https://1.bp.blogspot.com/-fWlZhUcsxeY/XX2g4nj9DII/AAAAAAABV_k/omYH3ZAvbGYWkYe6g1DnZjB5R7yf6CmsQCLcBGAsYHQ/s1600/AS%2BRoma.png',
+      urlShield: 'https://i.postimg.cc/90JfJP6J/AS-Roma.png',
       country: 'Italia',
       pontos: 3,
       jogados: 4,
@@ -62,7 +62,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'CSKA Moscow',
-      urlShield: 'https://4.bp.blogspot.com/--xAP0FKSNKM/WVkuta4oXyI/AAAAAAABLN8/1hIcCnb8bZcPEbYYCb0WrALVspOvdIOsACLcBGAs/s1600/PFC%2BCSKA%2BMoscow.png',
+      urlShield: 'https://i.postimg.cc/WpntNjdg/CSKA-Moscow.png',
       country: 'Rússia',
       pontos: 6,
       jogados: 4,
@@ -76,7 +76,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'San Lorenzo',
-      urlShield: 'https://upload.wikimedia.org/wikipedia/commons/6/62/Escudo_del_Club_Atl%C3%A9tico_San_Lorenzo_de_Almagro.png',
+      urlShield: 'https://i.postimg.cc/ZRLY5F54/San-Lorenzo.png',
       country: 'Argentina',
       pontos: 6,
       jogados: 4,
@@ -90,7 +90,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Barcelona',
-      urlShield: 'https://logodownload.org/wp-content/uploads/2015/05/Barcelona-logo-escudo.png',
+      urlShield: 'https://i.postimg.cc/Vk3kGkhQ/Barcelona.png',
       country: 'Espanha',
       pontos: 1,
       jogados: 5,
@@ -104,7 +104,7 @@ module.exports = {
       updatedAt: new Date()
     },{
       name: 'Corinthians',
-      urlShield: 'https://i1.wp.com/dreamleaguesoccer.com.br/wp-content/uploads/2016/11/escudo-Corinthians.png?fit=512%2C512&ssl=1',
+      urlShield: 'https://i.postimg.cc/Ghg2DQJp/Corinthians.png',
       country: 'Brasil',
       pontos: 10,
       jogados: 5,
