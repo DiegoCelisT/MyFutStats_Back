@@ -6,7 +6,7 @@ module.exports = {
     await queryInterface.bulkInsert('Clubes4s',[{
       name: 'Orlando Pirates',
       urlShield: 'https://i.postimg.cc/3RhJhb7t/Orlando-Pirates.png',
-      country: 'USA',
+      country: 'África do Sul',
       pontos: 6,
       jogados: 5,
       vitorias: 1,

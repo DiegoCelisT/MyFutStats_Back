@@ -4,8 +4,8 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     
     await queryInterface.bulkInsert('Clubes6s',[{
-      name: 'Atl. Bucaramanga',
-      urlShield: 'https://i.postimg.cc/L6ytswyQ/Bucaramanga.png',
+      name: 'Llaneros FC',
+      urlShield: 'https://i.postimg.cc/ZqVfy93q/Llaneros-FC.png',
       country: 'Colômbia',
       pontos: 9,
       jogados: 5,
@@ -32,9 +32,9 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },{
-      name: 'Juventus',
-      urlShield: 'https://i.postimg.cc/cJtM2hB9/Juventus.png',
-      country: 'Italia',
+      name: 'Club Brugge',
+      urlShield: 'https://i.postimg.cc/zf3FQq3t/Club-Brugge.png',
+      country: 'Bélgica',
       pontos: 3,
       jogados: 4,
       vitorias: 0,
