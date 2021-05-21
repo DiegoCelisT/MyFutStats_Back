@@ -4,9 +4,9 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     
     await queryInterface.bulkInsert('Clubes5s',[{
-      name: 'Wolfsburgo',
-      urlShield: 'https://i.postimg.cc/CKTmFb2v/Wolfsburgo.png',
-      country: 'Alemanha',
+      name: 'Babilio',
+      urlShield: 'https://i.postimg.cc/d1Fn1k7t/Babilio-Gaming.png',
+      country: 'Colômbia',
       pontos: 9,
       jogados: 5,
       vitorias: 2,

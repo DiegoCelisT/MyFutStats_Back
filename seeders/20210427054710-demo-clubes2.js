@@ -61,9 +61,9 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },{
-      name: 'América de Cali',
-      urlShield: 'https://i.postimg.cc/VsXBDyrh/Am-rica-de-Cali.png',
-      country: 'Colômbia',
+      name: 'Sinisters',
+      urlShield: 'https://i.postimg.cc/fygV6mc2/Sinisters-e-Sports.png',
+      country: 'Argentina',
       pontos: 9,
       jogados: 5,
       vitorias: 2,

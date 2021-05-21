@@ -33,9 +33,9 @@ module.exports = {
       updatedAt: new Date()
     
     },{
-      name: 'Alianza Lima',
-      urlShield: 'https://i.postimg.cc/cJZcn0cZ/Alianza-Lima.png',
-      country: 'Perú',
+      name: 'Furious',
+      urlShield: 'https://i.postimg.cc/L8yxx60x/Furious-Gaming.png',
+      country: 'Argentina',
       pontos: 9,
       jogados: 5,
       vitorias: 2,
@@ -47,7 +47,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },{
-      name: 'Inter de Milán',
+      name: 'Inter',
       urlShield: 'https://i.postimg.cc/sxtYDr2k/Inter-de-Mil-n.png',
       country: 'Italia',
       pontos: 9,
