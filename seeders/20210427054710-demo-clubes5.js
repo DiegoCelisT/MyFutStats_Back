@@ -77,14 +77,14 @@ module.exports = {
       name: 'Olimpia',
       urlShield: 'https://i.postimg.cc/YqTx31tp/Olimpia.png',
       country: 'Paraguai',
-      pontos: 5,
-      jogados: 5,
-      vitorias: 1,
+      pontos: 2,
+      jogados: 8,
+      vitorias: 0,
       empates: 2,
-      derrotas: 2,
-      golsPro: 11,
+      derrotas: 6,
+      golsPro: 3,
       golsContra: 18,
-      saldoGols: -7,
+      saldoGols: -15,
       createdAt: new Date(),
       updatedAt: new Date()
     },{
@@ -96,9 +96,9 @@ module.exports = {
       vitorias: 3,
       empates: 1,
       derrotas: 1,
-      golsPro: 11,
+      golsPro: 22,
       golsContra: 8,
-      saldoGols: 3,
+      saldoGols: 14,
       createdAt: new Date(),
       updatedAt: new Date()
     },{
@@ -110,9 +110,9 @@ module.exports = {
       vitorias: 3,
       empates: 1,
       derrotas: 1,
-      golsPro: 11,
-      golsContra: 8,
-      saldoGols: 3,
+      golsPro: 21,
+      golsContra: 5,
+      saldoGols: 16,
       createdAt: new Date(),
       updatedAt: new Date()
     }]);

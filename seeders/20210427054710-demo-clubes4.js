@@ -33,9 +33,9 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },{
-      name: 'Leicester',
-      urlShield: 'https://i.postimg.cc/pL9dJFqJ/Leicester.png',
-      country: 'Inglaterra',
+      name: 'Coliseo Dragons',
+      urlShield: 'https://i.postimg.cc/zGRjKc3v/Coliseo-Dragons.png',
+      country: 'Argentina',
       pontos: 7,
       jogados: 5,
       vitorias: 2,
