@@ -37,12 +37,12 @@ module.exports = {
       country: 'Bélgica',
       pontos: 3,
       jogados: 4,
-      vitorias: 0,
-      empates: 3,
-      derrotas: 1,
-      golsPro: 5,
+      vitorias: 1,
+      empates: 0,
+      derrotas: 3,
+      golsPro: 10,
       golsContra: 17,
-      saldoGols: -12,
+      saldoGols: -7,
       createdAt: new Date(),
       updatedAt: new Date()
     },{
@@ -68,9 +68,9 @@ module.exports = {
       vitorias: 0,
       empates: 3,
       derrotas: 1,
-      golsPro: 5,
+      golsPro: 16,
       golsContra: 17,
-      saldoGols: -12,
+      saldoGols: -1,
       createdAt: new Date(),
       updatedAt: new Date()
     },{
